@@ -1,0 +1,26 @@
+.wholedirtynavbar{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbarhaiye{
+    display: flex;
+    flex-direction: row;
+    background-color: cornflowerblue;
+    width: 90%;
+    height: auto;
+    margin: 25px auto;
+    justify-content: space-around;
+    align-items: space-around;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    border-radius: 20px;
+    line-height: normal;
+}
+
+.logoutofnavbar{
+    height: 23px;
+    width: auto;
+    margin-top: 20px;
+}

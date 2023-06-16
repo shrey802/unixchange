@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+.signupform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bagel Fat One', cursive;
+    font-size: 20px;
+}
+.signupemail{
+    width: 350px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid blanchedalmond;
+    color: aliceblue;
+    font-size: 17px;
+    padding: 5px;
+}
+.signuppassword{
+    width: 350px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid blanchedalmond;
+    color: aliceblue;
+    font-size: 17px;
+    padding: 5px;
+}
+.signupsubmit{
+    width: 100px;
+    height: auto;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid blanchedalmond;
+    padding: 7px;
+}
+.heading{
+    font-size: 35px;
+    color: blueviolet;
+    text-align: center;
+    font-family: 'Bagel Fat One', cursive;
+}
