@@ -1,0 +1,33 @@
+.modalhaiye{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+.fullname{
+    height: 30px;
+    width: 300px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+}
+.age{
+    height: 30px;
+    width: 300px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+}
+.submit{
+    height: 30px;
+    width: 200px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+}
+
+.motto{
+    height: 30px;
+    width: 200px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+}

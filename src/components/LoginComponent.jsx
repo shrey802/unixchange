@@ -5,12 +5,16 @@ import { Login } from '../api/Authapi';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 export default function LoginComponent(){
-    const [loginCredentials, setloginCredentials] = useState({});
+    const [credentials, setCredentials] = useState({});
     const navigate = useNavigate();
-    const login = () => {
-        let logindata = Login(loginCredentials.email, loginCredentials.password);
-        toast('Login successful');
-        navigate('/home');
+    const login = async() => {
+        try {
+            let logindata = await Login(credentials.email, credentials.password);
+            toast('Login successful');
+            navigate('/home');
+        } catch (error) {
+            toast('Error: ' + error.message);
+        }
     }
     return(
         <div className='login-container'>
@@ -22,7 +26,7 @@ export default function LoginComponent(){
                 name='email'
                 placeholder='enter your email address'
                 className='loginemail'
-                onChange={(event) => setloginCredentials({...loginCredentials, email: event.target.value})}
+                onChange={(event) => setCredentials({...credentials, email: event.target.value})}
                 />
 
                 <label>Password</label>
@@ -31,7 +35,7 @@ export default function LoginComponent(){
                 name='password'
                 placeholder='enter your password'
                 className='loginpassword'
-                onChange={(event) => setloginCredentials({...loginCredentials, password: event.target.value})}
+                onChange={(event) => setCredentials({...credentials, password: event.target.value})}
                 />
 
                 <input

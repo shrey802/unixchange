@@ -8,6 +8,8 @@ import HomePage from '../pages/HomePage'
 import LoginPage from '../pages/LoginPage'
 import ContributePage from '../pages/ContriPage'
 import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
+import ProfilePage from "../pages/ProfilePage";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -28,5 +30,13 @@ export const router = createBrowserRouter([
     {
         path: '/about',
         element: <AboutPage/>
+    },
+    {
+        path: '/contact',
+        element: <ContactPage/>
+    },
+    {
+        path: '/profile',
+        element: <ProfilePage/>
     }
 ])

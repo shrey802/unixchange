@@ -19,18 +19,24 @@ function contriNavigate(){
 function about(){
   navigate('/about');
 }
+function handleContact(){
+  navigate('/contact');
+}
+function handleProfile(){
+  navigate('/profile');
+}
   return (
     <div className='wholedirtynavbar'>
         <nav className='navbarhaiye'>
             
                 <h1 className='headingofnavbar'>UnixChange <FaUniversity size={25}/> </h1>
         
-                <p className='contactofnavbar'>Contact <AiFillPhone size={25}/></p>
+                <p className='contactofnavbar' onClick={handleContact}>Contact <AiFillPhone size={25}/></p>
                 <p className='aboutofnavbar' onClick={about}>About <SiAboutdotme size={25}/></p>
                 <p className='contributeofnavbar' onClick={contriNavigate}>Wanna Contribute?
                  <AiFillCodeSandboxSquare size={25}/></p>
             
-                <p className='profileofnavbar'>your profile <GiPlagueDoctorProfile size={25}/></p>
+                <p className='profileofnavbar' onClick={handleProfile}>your profile <GiPlagueDoctorProfile size={25}/></p>
 
                 <button className='logoutofnavbar' onClick={navigation}>LogOut</button>
            

@@ -13,6 +13,8 @@ const register = async() => {
     try {
         let userdata = await SignUp(credentials.email, credentials.password);
         toast.success("signing up");
+        localStorage.setItem('userID', userdata.userID);
+        localStorage.setItem('userEmail', userdata.email);
         navigate('/home');
     } catch (error) {
         toast.error(error.message);

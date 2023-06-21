@@ -1,7 +1,12 @@
+/* eslint-disable no-undef */
+
 /* eslint-disable no-unused-vars */
 // Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -15,11 +20,12 @@ const firebaseConfig = {
   storageBucket: "unixchange-4562c.appspot.com",
   messagingSenderId: "868744436636",
   appId: "1:868744436636:web:229a9baff352e194350659",
-  measurementId: "G-VE8B1VL7M8"
+  measurementId: "G-VE8B1VL7M8",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-export {app, auth};
+const db = getFirestore(app);
+export {app, auth, db};
 // const analytics = getAnalytics(app);

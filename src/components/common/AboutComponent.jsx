@@ -7,7 +7,7 @@ export default function AboutComponent() {
       <div className='aboutsection' style={{fontSize: '23px', textAlign: 'center'}}>
         <p>About me? Even idk let's talk on socials</p>
         <a href='https://twitter.com/ShreyashPingle'>Twitter </a> <br/>
-        <a href='mailto: shreypingle23@gmail.com'>Mail to</a>
+        <a href='mailto: shreypingle23@gmail.com'>mail me </a>
       </div>
     )
 }

@@ -1,41 +1,85 @@
 /* eslint-disable no-unused-vars */
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut} from 'firebase/auth';
-import { auth } from '../firebaseConfig.js';
-
-export const SignUp = async(email, password) => {
+import {
+    signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider,
+    signInWithPopup, signOut
+} from 'firebase/auth';
+import { auth, db } from '../firebaseConfig.js';
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { v4 as uuidv4 } from 'uuid';
+export const SignUp = async (email, password) => {
     try {
-         let response = await createUserWithEmailAndPassword(auth, email, password);
-         return response;
+
+        let response = await createUserWithEmailAndPassword(auth, email, password);
+        const userID = uuidv4();
+        const userCollection = collection(db, 'users');
+        const userData = {
+            userID: userID,
+            email: email,
+        }
+        await addDoc(userCollection, userData);
+        return {
+            // response: response,
+            userID: userID,
+            email: email,
+        }
+    }
+    catch (err) {
+        return err;
+    }
+}
+
+export const GoogleSignUp = async () => {
+    try {
+
+        let googleprovider = new GoogleAuthProvider();
+        let res = signInWithPopup(auth, googleprovider);
+        return res;
+    }
+
+    catch (err) {
+        return err;
+    }
+}
+
+const getUserID = async (email) => {
+    try {
+        const userCollection = collection(db, 'users');
+        const q = query(userCollection, where('email', '==', email));
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+            throw new Error('User not found');
+        }else {
+            const { userDoc, userID } = querySnapshot.docs[0];
+            return userID;
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const Login = async (email, password) => {
+    try {
        
-    } catch (error) {
-        return error;
+        let response = await signInWithEmailAndPassword(auth, email, password);
+        const userID = await getUserID(email);
+        localStorage.setItem('userID', userID);
+        return response;
+    }
+    catch (err) {
+        return err;
     }
 }
 
-export const GoogleSignUp = async(email, password) => {
-    try {
-        let userCreatedbyGoogle = await signInWithPopup(auth, new GoogleAuthProvider());
-        return userCreatedbyGoogle;
-    } catch (error) {
-        return error;
-    }
-}
-
-export const Login = async(email, password) => {
-    try {
-        let loginResponse = await signInWithEmailAndPassword(auth, email, password);
-        return loginResponse;
-    } catch (error) {
-        return error;
-    }
-}
 
 
 export const Logout = () => {
-    
+
     try {
         signOut(auth);
+        localStorage.removeItem('userID');
     } catch (error) {
         return error;
     }
 }
+

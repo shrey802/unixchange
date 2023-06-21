@@ -5,7 +5,7 @@ export default function ContributeComp() {
     return (
       <div className='contribution' style={{textAlign: 'center', fontSize: "23px"}}>
         <h4>UnixChange is an open source project. Feel free to contribute it.</h4>
-        <a href=''><AiFillGithub/> Contribute on Github</a> <br/>
+        <a href='https://github.com/shrey802/unixchange'><AiFillGithub/> Contribute on Github</a> <br/>
         <p>Adding more information later on.</p> 
       </div>
     )
