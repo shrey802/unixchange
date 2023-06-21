@@ -48,11 +48,11 @@ const getUserID = async (email) => {
         const querySnapshot = await getDocs(q);
         if (querySnapshot.empty) {
             throw new Error('User not found');
-        }else {
-            const { userDoc, userID } = querySnapshot.docs[0];
-            return userID;
         }
-
+        let docSnap = querySnapshot.docs[0];
+        let {userDoc, userID} = docSnap.data();
+       
+        return userID;
     } catch (error) {
         console.log(error);
     }

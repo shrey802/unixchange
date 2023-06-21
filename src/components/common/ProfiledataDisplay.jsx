@@ -5,6 +5,7 @@ export default function ProfiledataDisplay() {
     return (
       <div className='profileUserData'>
         <p>Mail : {localStorage.getItem('userEmail')}</p>
+        <h2>Name: </h2>
       </div>
     )
 }

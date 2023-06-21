@@ -61,6 +61,8 @@ const googleregister = async() => {
                 onClick={register}
                 />
                
+               <p>Already have an account? <a href='/login' className='loginlink'>Login</a></p>
+
                 <div className='signupwithgoogle'>
                     <GoogleButton type='dark' onClick={googleregister}/>
                 </div>

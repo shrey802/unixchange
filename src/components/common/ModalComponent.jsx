@@ -1,15 +1,18 @@
+
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react'
 import '../common/modal.css'
 import {UserEdited} from '../../api/Profileapi';
 import {toast} from 'react-toastify';
-export default function ModalComponent() {
+export default function ModalComponent({toggleModal}) {
   const [credentials, setCredentials] = useState({});
   const handleEditedData = async () => {
     try {
-      let usereditdata = await UserEdited(credentials.fullname, credentials.age, credentials.motto);
-      toast('Your data has been updated');
-      
+      let userID = localStorage.getItem('userID');
+      let usereditdata = await UserEdited(userID,credentials.fullname, credentials.age, credentials.motto);
+      toast('User edited');
+      toggleModal();
     } catch (error) {
       toast(error);
     }
