@@ -1,11 +1,16 @@
 .profileUserData{
     display: flex;
     flex-direction: column;
-    gap: 15px;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: brown;
     font-size: 20px;
-    height: 200px;
+    height: 300px;
     width: auto;
+}
+.profileditage{
+    margin-top: -10px;
+}
+.profileditmotto{
+    margin-top: -10px;
 }

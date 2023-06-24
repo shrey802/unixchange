@@ -29,3 +29,21 @@ export const UserEdited = async (userID, fullname, age, motto) => {
   
 }
 
+export const DisplayDataonDiv = async (userID) => {
+  const userCollection = collection(db, 'users');
+  // check the userID and traverse through each document with same userID
+  const q = query(userCollection, where('userID', '==', userID));
+  // assuming there are multiple documents so we get all documents that match with the ID
+  const querySnapshot = await getDocs(q);
+  // log if the document is empty
+  if (querySnapshot.empty) {
+      throw new Error('User not found');
+  }
+  let docSnap = querySnapshot.docs[0];
+  const userData = docSnap.data();
+  return {
+    motto: userData.motto,
+    fullname: userData.fullname,
+    age: userData.age
+  }
+}
