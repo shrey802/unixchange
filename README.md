@@ -8,13 +8,17 @@ React js, Firebase Web, CSS.
 -> A place to exchange your stuff and by stuff I mean any stuff. 
 
 # Features built- 
--> Edit profile.
--> Get queries from users.
--> Other minor features.
+-> Edit profile. <br />
+
+-> Get queries from users. <br />
+
+-> Other minor features. 
 
 # Features remaining - 
--> Post stuff.
--> P2P payment integration and exchange logic.
+-> Post stuff. <br />
+ 
+-> P2P payment integration and exchange logic. <br />
+
 
 # Features built but should be modified -
 -> Google OAuth
@@ -24,3 +28,16 @@ React js, Firebase Web, CSS.
 
 # Ideas?
 -> Discussions of this repository.
+
+# To start contributing do the following steps:-
+Build a project in Firebase, get the Firebase Configuration, and put it in the .env file.  <br />
+
+step 1 - npm i <br />
+
+step 2 - create an env file in the root and set your Firebase configuration. <br />
+
+step 3 - run this command <br />
+
+```
+npm run dev
+```
