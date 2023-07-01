@@ -6,11 +6,30 @@ import '../common/modal.css'
 import {UserEdited} from '../../api/Profileapi';
 import {toast} from 'react-toastify';
 export default function ModalComponent({toggleModal}) {
+
+// BELOW STATE IS TO GET AND SET THE USER UPLOADED IMAGE
+  const [imageUpload, setimageUpload] = useState(null);
+
+// BELOW STATE IS TO GET AND SET THE USER UPLOADED TEXT DATA
+
   const [credentials, setCredentials] = useState({});
+
+
+  // const handleUpload = async() => {
+  //   try {
+  //     let userpicture = await UploadUserProfilepic(imageUpload);
+  //     toast.success('Uploaded user profile');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  // BELOW FUNCTION IS TO UPDATE ALL THE TEXT DATA (INCLUDE IMAGE ALSO)
+
   const handleEditedData = async () => {
     try {
       let userID = localStorage.getItem('userID');
-      let usereditdata = await UserEdited(userID,credentials.fullname, credentials.age, credentials.motto);
+      let usereditdata = await UserEdited(userID,credentials.fullname, credentials.age, credentials.motto, imageUpload);
       toast('User edited');
       toggleModal();
     } catch (error) {
@@ -34,7 +53,11 @@ export default function ModalComponent({toggleModal}) {
           onChange={(event) => setCredentials({...credentials, age: event.target.value})}
           />
 
-          {/* <input type='file' placeholder='Enter your image' className='image'/> */}
+          <input type='file' 
+          placeholder='Enter your image' 
+          className='image'
+          onChange={(event) => setimageUpload(event.target.files[0])}
+          />
 
           <textarea className='motto' 
           placeholder='enter your lifes motto'

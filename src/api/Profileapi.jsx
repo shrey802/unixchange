@@ -1,8 +1,26 @@
 /* eslint-disable no-unused-vars */
 import {db} from '../firebaseConfig';
 import { updateDoc, collection, query, where, getDocs, doc} from "firebase/firestore"; 
+import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
+import { storage } from '../firebaseConfig';
 
-export const UserEdited = async (userID, fullname, age, motto) => {
+// BELOW FUNCTION IS TO UPDATE THE DOCUMENT WITH ALL THE DATA (NAME, MOTTO, AGE, IMAGE)
+
+export const UserEdited = async (userID, fullname, age, motto, picture) => {
+
+    const storageRef = ref(storage, `userprofilepicture/${userID}`);
+    let downloadedURL = '';
+    try {
+        await uploadBytes(storageRef, picture);
+        const downloadURL = await getDownloadURL(storageRef);
+        console.log('File uploaded');
+        downloadedURL = downloadURL;
+        console.log(downloadURL);
+      } catch (error) {
+        console.log('Upload error:', error);
+    }
+
+
     // we get the collection to query from
     const userCollection = collection(db, 'users');
     // check the userID and traverse through each document with same userID
@@ -21,13 +39,17 @@ export const UserEdited = async (userID, fullname, age, motto) => {
   const payload = {
     fullname: fullname,
     age: age,
-    motto: motto
+    motto: motto,
+    profilepicture: downloadedURL
   };
 // pass the document ID and data and it updates it
   await updateDoc(userRef, payload);
   console.log('User edited');
   
 }
+
+
+// BELOW FUNCTION IS TO SEND THE DATA AS OBJECT AND PASSED TO ProfileComponent TO RENDER 
 
 export const DisplayDataonDiv = async (userID) => {
   const userCollection = collection(db, 'users');
@@ -44,6 +66,31 @@ export const DisplayDataonDiv = async (userID) => {
   return {
     motto: userData.motto,
     fullname: userData.fullname,
-    age: userData.age
+    age: userData.age,
+    profilepicture: userData.profilepicture
   }
 }
+
+
+
+// export const UploadUserProfilepic = async (picture) => {
+//   const storageRef = ref(storage, 'userprofilefpicture');
+//   // const userID = localStorage.getItem('userID');
+//   try {
+//     await uploadBytes(storageRef, picture);
+//     const downloadURL = await getDownloadURL(storageRef);
+//     console.log('File uploaded');
+//     // HandleProfileURL(downloadURL);
+//     localStorage.setItem('userpicURL', downloadURL);
+//     return downloadURL;
+//   } catch (error) {
+//     console.log('Upload error:', error);
+//   }
+// };
+
+// export const HandleProfileURL = (url) => {
+//   return {
+//     userkauploadedphoto: url
+//   }
+  
+// }

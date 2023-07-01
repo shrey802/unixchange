@@ -1,8 +1,8 @@
 .profileUserData{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     background-color: brown;
     font-size: 20px;
     height: 300px;
@@ -13,4 +13,14 @@
 }
 .profileditmotto{
     margin-top: -10px;
+}
+.profileditimagecontainer{
+    position: absolute;
+    left: 50px;
+}
+.profileditimage{
+    border-radius: 50%;
+    height: 210px;
+    width: 220px;
+    border: 4px dotted pink;
 }

@@ -2,10 +2,23 @@
 import React, {useState, useEffect} from 'react'
 import ModalComp from '../components/common/ModalComponent'
 import ProfiledataDisplay from './common/ProfiledataDisplay';
-import { DisplayDataonDiv } from '../api/Profileapi';
+import { DisplayDataonDiv} from '../api/Profileapi';
 export default function ProfileComponent(){
+  // const [imageurl, setimageurl] = useState('');
    const [isModalOpen, setModalproperty] = useState(false);
    const [userkaData, setUserkaData] = useState({});
+  //  useEffect(() => {
+  //   const fetchurl = async () => {
+  //     try {
+  //       let uploadedimageurl = localStorage.getItem('userpicURL');
+  //       const userkaphoto = HandleProfileURL(uploadedimageurl);
+  //       setimageurl(userkaphoto.userkauploadedphoto);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchurl();
+  //  }, [!isModalOpen])
   const userID = localStorage.getItem('userID');
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +38,7 @@ export default function ProfileComponent(){
     return (
       <div style={{textAlign: 'center'}}>
         <div>
-          <ProfiledataDisplay fullname={userkaData.fullname} age={userkaData.age} motto={userkaData.motto}/>
+          <ProfiledataDisplay userkaimage={userkaData.profilepicture} fullname={userkaData.fullname} age={userkaData.age} motto={userkaData.motto}/>
         </div>
         <button onClick={toggleModal} 
         style={{marginTop: '30px', height: '30px', width:'auto', fontSize: '23px', marginBottom: '30px'}}>
