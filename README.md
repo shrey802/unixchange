@@ -32,7 +32,7 @@ React js, Firebase Web, CSS.
 
 # To start contributing do the following steps:-
 Set up a project in Firebase, get the Firebase Configuration, and put it in the .env file. The link 👇 will help you set up the project in Firebase <br />
-> https://youtu.be/2hR-uWjBAgw
+> https://youtu.be/2hR-uWjBAgw <br/>
 **Timestamp for the video above ☝ 3:04 to 7:00**
 **Also setup Email and Password authentication**
 
