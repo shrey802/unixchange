@@ -14,16 +14,6 @@ export default function ModalComponent({toggleModal}) {
 
   const [credentials, setCredentials] = useState({});
 
-
-  // const handleUpload = async() => {
-  //   try {
-  //     let userpicture = await UploadUserProfilepic(imageUpload);
-  //     toast.success('Uploaded user profile');
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
   // BELOW FUNCTION IS TO UPDATE ALL THE TEXT DATA (INCLUDE IMAGE ALSO)
 
   const handleEditedData = async () => {

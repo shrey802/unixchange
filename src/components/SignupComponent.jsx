@@ -2,9 +2,8 @@
 
 import React, {useState} from 'react';
 import './css/signup.css';
-import { SignUp, GoogleSignUp } from '../api/Authapi';
+import { SignUp} from '../api/Authapi';
 import {toast} from 'react-toastify';
-import GoogleButton from 'react-google-button';
 import { useNavigate } from "react-router-dom";
 export default function Signup() {
 const [credentials, setCredentials] = useState({});
@@ -21,11 +20,6 @@ const register = async() => {
     }
 }
 
-const googleregister = async() => {
-    let userbygoogle = GoogleSignUp();
-    toast('Google SignUp is almost success');
-    navigate('/home');
-}
 
     return (
         <div className='signupdiv'>
@@ -63,9 +57,6 @@ const googleregister = async() => {
                
                <p>Already have an account? <a href='/login' className='loginlink'>Login</a></p>
 
-                <div className='signupwithgoogle'>
-                    <GoogleButton type='dark' onClick={googleregister}/>
-                </div>
 
             </div>
 

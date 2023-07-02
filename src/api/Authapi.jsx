@@ -29,18 +29,6 @@ export const SignUp = async (email, password) => {
     }
 }
 
-export const GoogleSignUp = async () => {
-    try {
-
-        let googleprovider = new GoogleAuthProvider();
-        let res = signInWithPopup(auth, googleprovider);
-        return res;
-    }
-
-    catch (err) {
-        return err;
-    }
-}
 
 const getUserID = async (email) => {
     try {

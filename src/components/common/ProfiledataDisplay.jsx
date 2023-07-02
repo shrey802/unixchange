@@ -7,7 +7,7 @@ export default function ProfiledataDisplay(props) {
 
     return (
       <div className='profileUserData'>
-        {/* <p>Mail : {localStorage.getItem('userEmail')}</p> */}
+        
         <h4 className='profileditname'>
           <u>
             <i>Name: </i>

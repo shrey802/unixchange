@@ -21,9 +21,6 @@ React js, Firebase Web, CSS.
  
 -> P2P payment integration and exchange logic (API yet to decide). <br />
 
-# Features built but should be modified -
--> Google OAuth
-
 # Issues - 
 -> Responsiveness === false;
 

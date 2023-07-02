@@ -4,21 +4,10 @@ import ModalComp from '../components/common/ModalComponent'
 import ProfiledataDisplay from './common/ProfiledataDisplay';
 import { DisplayDataonDiv} from '../api/Profileapi';
 export default function ProfileComponent(){
-  // const [imageurl, setimageurl] = useState('');
+  
    const [isModalOpen, setModalproperty] = useState(false);
    const [userkaData, setUserkaData] = useState({});
-  //  useEffect(() => {
-  //   const fetchurl = async () => {
-  //     try {
-  //       let uploadedimageurl = localStorage.getItem('userpicURL');
-  //       const userkaphoto = HandleProfileURL(uploadedimageurl);
-  //       setimageurl(userkaphoto.userkauploadedphoto);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchurl();
-  //  }, [!isModalOpen])
+  
   const userID = localStorage.getItem('userID');
   useEffect(() => {
     const fetchData = async () => {

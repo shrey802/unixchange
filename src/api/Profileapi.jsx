@@ -72,25 +72,3 @@ export const DisplayDataonDiv = async (userID) => {
 }
 
 
-
-// export const UploadUserProfilepic = async (picture) => {
-//   const storageRef = ref(storage, 'userprofilefpicture');
-//   // const userID = localStorage.getItem('userID');
-//   try {
-//     await uploadBytes(storageRef, picture);
-//     const downloadURL = await getDownloadURL(storageRef);
-//     console.log('File uploaded');
-//     // HandleProfileURL(downloadURL);
-//     localStorage.setItem('userpicURL', downloadURL);
-//     return downloadURL;
-//   } catch (error) {
-//     console.log('Upload error:', error);
-//   }
-// };
-
-// export const HandleProfileURL = (url) => {
-//   return {
-//     userkauploadedphoto: url
-//   }
-  
-// }
