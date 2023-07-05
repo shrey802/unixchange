@@ -16,10 +16,11 @@ React js, Firebase Web, CSS.
 
 -> Profile Picture.
 
-# Features remaining - 
--> Post stuff (images, text, price). <br />
- 
+# Features remaining -  
 -> P2P payment integration and exchange logic (API yet to decide). <br />
+
+# Currently building -
+-> Features related to products on webapp.
 
 # Issues - 
 -> Responsiveness === false;
