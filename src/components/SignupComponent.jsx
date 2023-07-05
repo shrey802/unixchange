@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './css/signup.css';
 import { SignUp} from '../api/Authapi';
+import { onAuthStateChanged } from 'firebase/auth';
 import {toast} from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { auth } from '../firebaseConfig';
 export default function Signup() {
 const [credentials, setCredentials] = useState({});
 let navigate = useNavigate();
@@ -20,6 +22,14 @@ const register = async() => {
     }
 }
 
+useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+        if(user){
+            navigate('/home');
+        }
+        
+    })
+}, []);
 
     return (
         <div className='signupdiv'>

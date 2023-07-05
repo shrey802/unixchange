@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './css/login.css';
 import { Login } from '../api/Authapi';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import { onAuthStateChanged } from 'firebase/auth';
+import {auth} from '../firebaseConfig';
 export default function LoginComponent(){
     const [credentials, setCredentials] = useState({});
     const navigate = useNavigate();
@@ -16,6 +18,14 @@ export default function LoginComponent(){
             toast('Error: ' + error.message);
         }
     }
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if(user){
+                navigate('/home');
+            }
+            
+        })
+    }, []);
     return(
         <div className='login-container'>
             <h1 className='loginheading'>Login with your credentials</h1>

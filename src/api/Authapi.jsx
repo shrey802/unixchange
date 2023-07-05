@@ -1,12 +1,21 @@
 /* eslint-disable no-unused-vars */
 import {
-    signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider,
-    signInWithPopup, signOut
+    signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged
 } from 'firebase/auth';
 
 import { auth, db} from '../firebaseConfig';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
+
+// LISTENS FOR YOUR AUTH STATES (SIGNUP, LOGOUT, LOGIN)
+onAuthStateChanged(auth, (user) => {
+    if(user){
+        console.log('user is logged in');
+    }else{
+        console.log('user is not logged in');
+    }
+})
+
 export const SignUp = async (email, password) => {
     try {
 
