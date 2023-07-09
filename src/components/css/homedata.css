@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.headingofhome{
+    cursor: pointer;
+}
+.headingofhome > marquee{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: -25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: gray;
+}
+.headingofhome > h4{
+    text-align: center;
+    font-size: 34px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #9DB2BF;
+}
+.headingofhome > hr{
+    width: 43%;
+    border-top: dotted 3px;
+    margin-top: -20px;
+}
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 230px;
+    width: 65%;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: -15px;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A6EBD;
+    height: 150px;
+    width: 65%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.middle > h5{
+    color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.btn-prod{
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    background-color:blanchedalmond;
+    border-radius: 15px;
+    height: 50px;
+    width: auto;
+    color: blue;
+    padding: 10px;
+}

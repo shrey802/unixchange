@@ -10,6 +10,8 @@ import ContributePage from '../pages/ContriPage'
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import ProfilePage from "../pages/ProfilePage";
+import ProductPage from '../pages/ProductPage'
+import AddProdPage from '../pages/AddProdPage'
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -38,5 +40,13 @@ export const router = createBrowserRouter([
     {
         path: '/profile',
         element: <ProfilePage/>
+    },
+    {
+        path: '/products',
+        element: <ProductPage/>
+    },
+    {
+        path: '/addyourproduct',
+        element: <AddProdPage/>
     }
 ])
