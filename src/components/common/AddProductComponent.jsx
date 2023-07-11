@@ -44,7 +44,7 @@ export default function AddProductComponent() {
       setTimeout(() => {
         toast('you are being navigated now wait for few seconds');
         navigate('/products');
-      }, 3000);
+      }, 6000);
     } catch (error) {
       toast.error(error);
     }
@@ -92,7 +92,7 @@ export default function AddProductComponent() {
         onChange={handleInputChange}
       />
 
-      <label>Product Description</label>
+      <label>Product Description (upto 20-25 words)</label>
       <textarea
         placeholder='Enter your product description'
         name='description'

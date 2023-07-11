@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { db } from '../firebaseConfig';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import {ref, uploadString, getDownloadURL} from 'firebase/storage'
 import { storage } from '../firebaseConfig';
@@ -43,4 +43,12 @@ export const AddUsersProduct = async (name, description, price, quantity, condit
         console.log(error);
     }
 
+}
+
+
+export const GetAllProducts = async() => {
+  const prodRef = collection(db, 'products');
+  const snapshotofDocs = await getDocs(prodRef);
+  const allDocs = snapshotofDocs.docs.map((doc) => doc.data());
+  return allDocs;
 }
