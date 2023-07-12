@@ -5,7 +5,7 @@ import './display.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useLocation } from 'react-router-dom';
-export default function ProductDisplay({ products }) {
+export default function ProductDisplay({ products, onEdit }) {
   const location = useLocation();
   const responsive = {
     desktop: {
@@ -54,7 +54,7 @@ export default function ProductDisplay({ products }) {
           <p className='productCategory'><span className='spandata'>Category:</span> {product.category}</p>
           <p className='productTag'><span className='spandata'>Tag:</span> {product.tag}</p>
           {location.pathname ==='/myproducts' && (
-            <button>Edit</button>
+            <button onClick={() => onEdit(product.productID)}>Edit</button>
           )}
         </div>
       ))}

@@ -125,7 +125,6 @@ export default function AddProductComponent() {
         <input
           type='checkbox'
           className='productcondition'
-          placeholder='Enter the state of product'
           name='condition'
           value='new'
           checked={productData.condition === 'new'}
@@ -137,7 +136,6 @@ export default function AddProductComponent() {
         <input
           type='checkbox'
           className='productcondition'
-          placeholder='Enter the state of product'
           name='condition'
           value='used'
           checked={productData.condition === 'used'}
