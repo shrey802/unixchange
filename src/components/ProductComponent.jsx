@@ -15,7 +15,7 @@ export default function ProductComponent() {
         }
     };
     fetchProductsfunc();
-  }, [productData]);
+  }, []);
   return (
     <div>
       <ProductDashboard/>

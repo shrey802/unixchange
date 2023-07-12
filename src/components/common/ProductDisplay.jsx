@@ -4,8 +4,9 @@ import React from 'react';
 import './display.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import { useLocation } from 'react-router-dom';
 export default function ProductDisplay({ products }) {
+  const location = useLocation();
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -52,6 +53,9 @@ export default function ProductDisplay({ products }) {
           <p className='productCondition'><span className='spandata'>Condition:</span> {product.condition}</p>
           <p className='productCategory'><span className='spandata'>Category:</span> {product.category}</p>
           <p className='productTag'><span className='spandata'>Tag:</span> {product.tag}</p>
+          {location.pathname ==='/myproducts' && (
+            <button>Edit</button>
+          )}
         </div>
       ))}
     </div>

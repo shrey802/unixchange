@@ -12,6 +12,7 @@ import ContactPage from "../pages/ContactPage";
 import ProfilePage from "../pages/ProfilePage";
 import ProductPage from '../pages/ProductPage'
 import AddProdPage from '../pages/AddProdPage'
+import MyProductsPage from '../pages/MyProductsPage'
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -48,5 +49,9 @@ export const router = createBrowserRouter([
     {
         path: '/addyourproduct',
         element: <AddProdPage/>
+    },
+    {
+        path: '/myproducts',
+        element: <MyProductsPage/>
     }
 ])

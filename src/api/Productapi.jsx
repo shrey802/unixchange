@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { db } from '../firebaseConfig';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import {ref, uploadString, getDownloadURL} from 'firebase/storage'
 import { storage } from '../firebaseConfig';
@@ -45,10 +45,19 @@ export const AddUsersProduct = async (name, description, price, quantity, condit
 
 }
 
-
+// API TO GET ALL PRODUCTS IN PRODUCTS COLLECTION 
 export const GetAllProducts = async() => {
   const prodRef = collection(db, 'products');
   const snapshotofDocs = await getDocs(prodRef);
   const allDocs = snapshotofDocs.docs.map((doc) => doc.data());
   return allDocs;
+}
+
+// API TO GET SPECIFIC PRODUCTS USING USERID PROVIDED
+export const GetUserProducts = async(userID) => {
+  const prodRef = collection(db, 'products');
+  const q = query(prodRef, where('userID', '==', userID));
+  const querySnapshot = await getDocs(q);
+  const myproducts = querySnapshot.docs.map((doc) => doc.data());
+  return myproducts;
 }
