@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { db } from '../firebaseConfig';
-import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where, doc, updateDoc} from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import {ref, uploadString, getDownloadURL} from 'firebase/storage'
 import { storage } from '../firebaseConfig';
@@ -60,4 +60,31 @@ export const GetUserProducts = async(userID) => {
   const querySnapshot = await getDocs(q);
   const myproducts = querySnapshot.docs.map((doc) => doc.data());
   return myproducts;
+}
+
+// API TO GET SPECIFIC PRODUCT USING PRODUCTID FOR UPDATING THE PRODUCTS
+export const GetProductByProductId = async (productID) => {
+  const prodRef = collection(db, 'products');
+  const q = query(prodRef, where('productID', '==', productID));
+  const querySnapshot = await getDocs(q);
+  
+  if (!querySnapshot.empty) {
+    const specificProduct = querySnapshot.docs[0].data();
+    return specificProduct;
+  } else {
+    throw new Error('Product not found');
+  }
+};
+
+// API TO UPDATE A SPECIFIC PRODUCT USING PRODUCT ID  
+export const UpdateProductByProductId = async(productID, updatedDoc) => {
+  const prodRef = collection(db, 'products');
+  const q = query(prodRef, where('productID', '==', productID));
+  const querySnapshot = await getDocs(q);
+  if(!querySnapshot.empty){
+    const docRef = doc(db, 'products', querySnapshot.docs[0].id);
+    await updateDoc(docRef, updatedDoc);
+  }else{
+    throw new Error('Product not updated');
+  }
 }

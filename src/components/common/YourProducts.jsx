@@ -8,6 +8,9 @@ export default function YourProducts() {
   const [myproducts, setMyProducts] = useState([]);
   const userID = localStorage.getItem('userID');
   const navigate = useNavigate();
+  function home(){
+    navigate('/products');
+  }
   function handleEdit(productID){
     localStorage.setItem('currentProductID', productID);
     navigate('/editproduct');
@@ -17,7 +20,7 @@ export default function YourProducts() {
       try {
         const myProducts = await GetUserProducts(userID);
         setMyProducts(myProducts);
-        toast.success('Your products fetched successfully');
+        toast('Fetched your products')
       } catch (error) {
         toast.error(error);
       }
@@ -28,6 +31,7 @@ export default function YourProducts() {
 
   return (
     <div>
+      <button onClick={home} style={{textAlign: 'center', margin: '20px'}}>Back to home</button>
       <h1 style={{textAlign: 'center'}}>Your Products</h1>
        <ProductDisplay products={myproducts} onEdit={handleEdit}/>
     </div>
