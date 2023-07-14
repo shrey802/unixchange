@@ -46,6 +46,7 @@ export default function EditForm() {
       UpdateProductByProductId(productID, specificProductData);
       toast('You have updated the product now redirecting please wait...');
       navigate('/myproducts');
+      localStorage.removeItem('currentProductID');
     } catch (error) {
       toast.error(error.message);
     }

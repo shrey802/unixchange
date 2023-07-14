@@ -58,16 +58,22 @@ const getUserID = async (email) => {
 
 export const Login = async (email, password) => {
     try {
-       
-        let response = await signInWithEmailAndPassword(auth, email, password);
-        const userID = await getUserID(email);
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      const userID = await getUserID(email);
+
+      if (response && userID) {
         localStorage.setItem('userID', userID);
-        return response;
+        localStorage.setItem('userEmail', email);
+      } else {
+        throw new Error('Authentication failed');
+      }
+    } catch (error) {
+      
+      console.log('Authentication error:', error);
+      throw error; 
     }
-    catch (err) {
-        return err;
-    }
-}
+  };
+  
 
 
 
