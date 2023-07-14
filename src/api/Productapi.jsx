@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { db } from '../firebaseConfig';
-import { collection, addDoc, getDocs, query, where, doc, updateDoc} from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where, doc, updateDoc, deleteDoc} from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import {ref, uploadString, getDownloadURL} from 'firebase/storage'
 import { storage } from '../firebaseConfig';
@@ -88,3 +88,24 @@ export const UpdateProductByProductId = async(productID, updatedDoc) => {
     throw new Error('Product not updated');
   }
 }
+
+
+// API TO DELETE A SPECIFIC PRODUCT USING PRODUCT ID
+export const DeleteProduct = async (productID) => {
+  try {
+    const prodRef = collection(db, 'products');
+    const q = query(prodRef, where('productID', '==', productID));
+    const querySnapshot = await getDocs(q);
+    
+    if (!querySnapshot.empty) {
+      const docSnapshot = querySnapshot.docs[0];
+      await deleteDoc(docSnapshot.ref);
+      console.log('Product deleted successfully');
+    } else {
+      throw new Error('Product not found');
+    }
+  } catch (error) {
+    console.log('Error deleting product:', error);
+    throw new Error('Failed to delete product');
+  }
+};
