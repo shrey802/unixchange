@@ -14,13 +14,17 @@ React js, Firebase Web, CSS.
 
 -> Other minor features. <br />
 
--> Profile Picture.
+-> Profile Picture. <br />
+
+-> Products & CRUD on products
 
 # Features remaining -  
 -> P2P payment integration and exchange logic (API yet to decide). <br />
 
 # Currently building -
--> Features related to products on webapp.
+-> Search for products. <br />
+
+-> Access to individual products.
 
 # Issues - 
 -> Responsiveness === false;
