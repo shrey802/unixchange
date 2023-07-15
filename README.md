@@ -2,7 +2,7 @@
 This repository contains a web app that is in the development stage. This is my first project & I'm thinking of building the MVP first (p0 features) and then adding more features and do improvements.
 
 # Tech stack used - 
-React js, Firebase Web, CSS.
+React js, Firebase (Web), CSS, Vite.
 
 # What is unixchange?
 -> A place to exchange your stuff (literally anything)!
