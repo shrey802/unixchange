@@ -1,38 +1,73 @@
-.addyourproductform{
+.addyourproductform {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 5%;
-}
-.addyourproductform > label{
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: palevioletred;
-}
-.prodhead{
-    font-size: 25px;
-    color: crimson;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .addyourproductform > label {
+    font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.nameofproduct{
-    height: 25px;
-    width: auto;
-}
-.addyourproductform > input[type="number"]{
-    height: 25px;
-    width: auto;
-    border-radius: 10px;
-}
-.addyourproductform > input[type="text"]{
-    border-radius: 10px;
-}
-.submitprod{
-    height: 50px;
-    width: 100px;
-    font-size: 23px;
+    color: #fff;
+  }
+  
+  .prodhead {
+    font-size: 24px;
+    color: #ff6363;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .nameofproduct {
+    height: 40px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .addyourproductform > input[type='number'] {
+    height: 40px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .addyourproductform > input[type='text'] {
+    height: 120px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    resize: none;
+    background-color: #fff;
+  }
+  
+  .submitprod {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
     border-radius: 8px;
-    background-color: brown;
+    background-color: #ff6363;
+    color: #fff;
     cursor: pointer;
-}
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitprod:hover {
+    background-color: #ff4646;
+  }
+  

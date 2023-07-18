@@ -24,8 +24,9 @@ React js, Firebase (Web), CSS, Vite.
 # Currently building -
 -> Search for products. <br />
 
--> Access to individual products.
+-> Access to individual products. <br/>
 
+-> Improving products page
 # Issues - 
 -> Responsiveness === false;
 

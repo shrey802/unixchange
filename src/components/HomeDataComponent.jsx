@@ -1,31 +1,28 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../components/css/homedata.css';
-export default function HomeDataComponent() {
+import backgroundImage from '../../images/ecommerce.jpg';
+
+export default function Homepage() {
   const navigate = useNavigate();
-  function navigatetoprod() {
+
+  function navigateToProducts() {
     navigate('/products');
   }
+
   return (
-    <div className='home-data-container'>
-        <div className='headingofhome'>
-            <marquee direction="up">BUY & SELL</marquee>
-            <h4>YOUR PRODUCTS</h4>
-            <hr/> 
-        </div>
-        <div className='btn-container'>
-        <button className='btn-prod' onClick={navigatetoprod}>go to products</button>
-        </div>
-        <div className='main-content'>
-            <div className='middle'>
-                <h5>Ecommerce has transformed industries, empowering small businesses and entrepreneurs 
-                  to compete with larger entities, while consumers enjoy a wide range of choices, 
-                  competitive pricing, and the ease of online transactions.
-                </h5>
-            </div>
-            
-        </div>
+    <div className='homepage-container'>
+      <div className='homepage-bg' style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+      <div className='homepage-content'>
+        <h1 className='homepage-heading'>Welcome to UnixChange</h1>
+        <p className='homepage-description'>
+          Discover a world of products. Buy and sell with ease.
+        </p>
+        <button className='homepage-btn' onClick={navigateToProducts}>
+          Explore Products
+        </button>
+      </div>
     </div>
-  )
+  );
 }
