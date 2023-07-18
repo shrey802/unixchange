@@ -1,26 +1,48 @@
-.profileUserData{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: brown;
-    font-size: 20px;
-    height: 300px;
-    width: auto;
+.profileUserData {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 50px;
+  color: #fff;
+  background-color: #D71313;
+  padding: 20px;
+  border-radius: 10px;
+  width: max-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 30px;
 }
-.profileditage{
-    margin-top: -10px;
+
+.profileUserData .profileText {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-top: 50px;
 }
-.profileditmotto{
-    margin-top: -10px;
+
+.profileUserData h4 {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
 }
-.profileditimagecontainer{
-    position: absolute;
-    left: 50px;
+
+.profileUserData u {
+  text-decoration: none;
+  font-style: italic;
 }
-.profileditimage{
-    border-radius: 50%;
-    height: 210px;
-    width: 220px;
-    border: 4px dotted pink;
+
+.profileUserData .profileditimage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileUserData {
+  margin-bottom: 10px;
+}
+
+.profileditimagecontainer {
+  display: flex;
+  justify-content: center;
 }

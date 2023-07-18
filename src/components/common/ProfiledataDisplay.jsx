@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React from 'react';
 import '../common/profiledata.css';
 
 export default function ProfiledataDisplay(props) {
-
-    return (
-      <div className='profileUserData'>
-        
+  return (
+    <div className='profileUserData'>
+      <div className='profileText'>
         <h4 className='profileditname'>
           <u>
             <i>Name: </i>
@@ -22,15 +21,14 @@ export default function ProfiledataDisplay(props) {
         </h4>
         <h4 className='profileditmotto'>
           <u>
-          <i>Motto: </i>
+            <i>Motto: </i>
           </u>
           {props.motto}
         </h4>
-        <div className='profileditimagecontainer'>
-          <img className='profileditimage' src={props.userkaimage}/>
-        </div>
-        
       </div>
-    )
+      <div className='profileditimagecontainer'>
+        <img className='profileditimage' src={props.userkaimage} alt='Profile' />
+      </div>
+    </div>
+  );
 }
-
