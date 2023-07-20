@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useCallback } from 'react';
-import '../common/addproduct.css';
+import '../common/edit.css';
 import { GetProductByProductId, UpdateProductByProductId } from '../../api/Productapi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';

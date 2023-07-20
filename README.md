@@ -14,8 +14,6 @@ React js, Firebase (Web), CSS, Vite.
 
 -> Other minor features. <br />
 
--> Profile Picture. <br />
-
 -> Products & CRUD on products
 
 # Features remaining -  
@@ -26,7 +24,6 @@ React js, Firebase (Web), CSS, Vite.
 
 -> Access to individual products. <br/>
 
--> Improving products page
 # Issues - 
 -> Responsiveness === false;
 

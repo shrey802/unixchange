@@ -1,63 +1,32 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
+
 import React from 'react';
 import './display.css';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import { useLocation } from 'react-router-dom';
-export default function ProductDisplay({ products, onEdit, onDelete }) {
-  const location = useLocation();
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
+import { Link } from 'react-router-dom';
 
+export default function ProductDisplay({ products, onEdit, onDelete, showButtons }) {
   return (
     <div className='productGrid'>
       {products.map((product) => (
         <div key={product.id} className='productCard'>
-          <Carousel
-            swipeable={true}
-            draggable={true}
-            showDots={false}
-            responsive={responsive}
-            infinite={true}
-            autoPlay={false}
-            containerClass='carousel-container'
-            itemClass='carousel-item'
-          >
-            {product.images.map((image, index) => (
-              <div key={index} className='imageContainer'>
-                <img src={image} alt={`Product ${index + 1}`} className='productImage' />
-              </div>
-            ))}
-          </Carousel>
-
+          <div className='imageContainer'>
+            <img src={product.images[0]} alt={`Product ${product.id}`} className='productImage' />
+          </div>
           <p className='productName'>{product.name}</p>
-          <p className='productDescription'><span className='spandata'>Description:</span> {product.description}</p>
-          <p className='productPrice'><span className='spandata'>Price:</span> {product.price}</p>
-          <p className='productQuantity'><span className='spandata'>Quantity:</span> {product.quantity}</p>
-          <p className='productCondition'><span className='spandata'>Condition:</span> {product.condition}</p>
-          <p className='productCategory'><span className='spandata'>Category:</span> {product.category}</p>
-          <p className='productTag'><span className='spandata'>Tag:</span> {product.tag}</p>
-          {location.pathname ==='/myproducts' && (
-            <>
-            <button onClick={() => onEdit(product.productID)}>Edit</button> <br/><br/>
-            <button onClick={() => onDelete(product.productID)}>Delete</button>
-            </>
+          <p className='productDescription'>{product.description.substring(0, 50)}...</p>
+          <div className='categoryContainer'>
+            <span className='productCategory'>{product.category}</span>
+          </div>
+          <Link to={`/products/${product.id}`} className='viewButton'>
+            View Details
+          </Link>
+          {showButtons && (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <button className="editButton" onClick={() => onEdit(product.productID)}>Edit</button>
+            <button className="deleteButton" onClick={() => onDelete(product.productID)}>Delete</button>
+          </div>
           )}
         </div>
       ))}
