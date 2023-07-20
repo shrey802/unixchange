@@ -7,6 +7,9 @@ import './display.css';
 import { Link } from 'react-router-dom';
 
 export default function ProductDisplay({ products, onEdit, onDelete, showButtons }) {
+  function handleindiprod(productID){
+    localStorage.setItem('productID', productID);
+  }
   return (
     <div className='productGrid'>
       {products.map((product) => (
@@ -19,7 +22,7 @@ export default function ProductDisplay({ products, onEdit, onDelete, showButtons
           <div className='categoryContainer'>
             <span className='productCategory'>{product.category}</span>
           </div>
-          <Link to={`/products/${product.id}`} className='viewButton'>
+          <Link to={`/products/${product.productID}`} className='viewButton' onClick={() => handleindiprod(product.productID)}>
             View Details
           </Link>
           {showButtons && (

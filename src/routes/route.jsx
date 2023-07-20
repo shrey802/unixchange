@@ -14,6 +14,7 @@ import ProductPage from '../pages/ProductPage'
 import AddProdPage from '../pages/AddProdPage'
 import MyProductsPage from '../pages/MyProductsPage'
 import EditFormPage from '../pages/EditFormPage'
+import IndividualProductPage from '../pages/IndividualPage'
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -58,5 +59,9 @@ export const router = createBrowserRouter([
     {
         path: '/editproduct',
         element: <EditFormPage/>
+    },
+    {
+        path: '/products/:productID',
+        element: <IndividualProductPage/>
     }
 ]);

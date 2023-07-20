@@ -1,0 +1,82 @@
+/* individualProduct.css */
+.indiproductContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.indiproductCategoryTagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.indiproductCategoryTagContainer p {
+  background-color: #F8D7DA;
+  border: 1px solid #D71313;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.indiproductContainer > h2{
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.indiproductImagesContainer {
+  max-height: 400px; /* Set the desired height for the carousel */
+  overflow: hidden; /* Hide overflow to prevent extra space */
+}
+
+.indiproductImage {
+  width: 100%; /* Make images take the full width of the carousel */
+  height: 100%; /* Make images take the full height of the carousel */
+  object-fit: cover; /* Adjust image aspect ratio */
+}
+
+.indiproductDetails {
+  font-size: 16px;
+}
+
+.indiproductDetails p {
+  margin-bottom: 10px;
+}
+
+.indiproductDetails .indiprodcat {
+  background-color: #F8D7DA;
+  border: 1px solid #D71313;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.indiproductDetails .indiprodtag {
+  background-color: #F8D7DA;
+  width: fit-content;
+  border: 1px solid #D71313;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.indiproductDetails span {
+  color: green;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.indiproductBackToProductsButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.indiproductBackToProductsButton:hover {
+  background-color: #0056b3;
+}

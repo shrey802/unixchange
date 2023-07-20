@@ -86,7 +86,6 @@ export default function YourProducts() {
       try {
         const myProducts = await GetUserProducts(userID);
         setMyProducts(myProducts);
-        toast('Fetched your products');
       } catch (error) {
         toast.error(error);
       }
