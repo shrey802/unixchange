@@ -15,6 +15,7 @@ import AddProdPage from '../pages/AddProdPage'
 import MyProductsPage from '../pages/MyProductsPage'
 import EditFormPage from '../pages/EditFormPage'
 import IndividualProductPage from '../pages/IndividualPage'
+import CartPage from "../components/common/CartComponent";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -63,5 +64,9 @@ export const router = createBrowserRouter([
     {
         path: '/products/:productID',
         element: <IndividualProductPage/>
+    },
+    {
+        path: '/mycart',
+        element: <CartPage/>
     }
 ]);

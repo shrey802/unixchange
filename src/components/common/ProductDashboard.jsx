@@ -15,6 +15,10 @@ export default function ProductDashboard() {
     navigate('/home');
   }
 
+  function gotocart(){
+    navigate('/mycart')
+  }
+
   function myproducts() {
     navigate('/myproducts');
   }
@@ -27,7 +31,7 @@ export default function ProductDashboard() {
       <button className='prod-addbtn' onClick={navigateprod}>
         Add Product
       </button>
-      <button className='cartbtn'>
+      <button className='cartbtn' onClick={gotocart}>
         <AiOutlineShoppingCart size={13} /> Your Cart
       </button>
       <button className='yourprod' onClick={myproducts}>

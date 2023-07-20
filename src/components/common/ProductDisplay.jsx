@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-
-
 import React from 'react';
 import './display.css';
 import { Link } from 'react-router-dom';
-
+import {toast} from 'react-toastify'
+import {AddToCart} from '../../api/Productapi'
 export default function ProductDisplay({ products, onEdit, onDelete, showButtons }) {
   function handleindiprod(productID){
     localStorage.setItem('productID', productID);
+  }
+  function handleAddToCart(productID){
+    AddToCart(productID);
+    toast.success('Product added to cart successfully')
   }
   return (
     <div className='productGrid'>
@@ -24,7 +27,10 @@ export default function ProductDisplay({ products, onEdit, onDelete, showButtons
           </div>
           <Link to={`/products/${product.productID}`} className='viewButton' onClick={() => handleindiprod(product.productID)}>
             View Details
-          </Link>
+          </Link> <br/>
+          <button className='addtocartbtn' onClick={() => handleAddToCart(product.productID)}>
+              Add to Cart
+          </button>
           {showButtons && (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <button className="editButton" onClick={() => onEdit(product.productID)}>Edit</button>
