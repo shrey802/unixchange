@@ -13,7 +13,7 @@ export default function Homepage() {
 
   return (
     <div className='homepage-container'>
-      <div className='homepage-bg' style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+      <div className='homepage-bg' style={{ backgroundImage: `url(${backgroundImage})` }} />
       <div className='homepage-content'>
         <h1 className='homepage-heading'>Welcome to UnixChange</h1>
         <p className='homepage-description'>
