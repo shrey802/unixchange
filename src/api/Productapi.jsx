@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { db } from '../firebaseConfig';
+import {app} from '../firebaseConfig'
 import { collection, addDoc, getDocs, query, where, doc, updateDoc, deleteDoc} from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import {ref, uploadString, getDownloadURL} from 'firebase/storage'
@@ -133,3 +134,21 @@ if (productInCart) {
 // Save the updated cart data to localStorage
 localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+export const GetCategories = async () => {
+  try {
+    const db = app.firestore();
+    const snapshot = await db.collection('products').get();
+    const categories = new Set();
+    snapshot.forEach((doc) => {
+      const product = doc.data();
+      if (product.category) {
+        categories.add(product.category);
+      }
+    });
+    return Array.from(categories);
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    return [];
+  }
+};

@@ -3,39 +3,55 @@
 import React from 'react';
 import './display.css';
 import { Link } from 'react-router-dom';
-import {toast} from 'react-toastify'
-import {AddToCart} from '../../api/Productapi'
-export default function ProductDisplay({ products, onEdit, onDelete, showButtons }) {
-  function handleindiprod(productID){
+import { toast } from 'react-toastify';
+import { AddToCart } from '../../api/Productapi';
+
+export default function ProductDisplay({ products, onEdit, onDelete, showButtons, searchQuery }) {
+  function handleindiprod(productID) {
     localStorage.setItem('productID', productID);
   }
-  function handleAddToCart(productID){
+  function handleAddToCart(productID) {
     AddToCart(productID);
-    toast.success('Product added to cart successfully')
+    toast.success('Product added to cart successfully');
   }
+
+  // Function to filter products based on search query
+  const filteredProducts = searchQuery
+    ? products.filter((product) => product.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    : products;
+
   return (
-    <div className='productGrid'>
-      {products.map((product) => (
-        <div key={product.id} className='productCard'>
-          <div className='imageContainer'>
-            <img src={product.images[0]} alt={`Product ${product.id}`} className='productImage' />
+    <div className="productGrid">
+      {filteredProducts.map((product) => (
+        <div key={product.id} className="productCard">
+          <div className="imageContainer">
+            <img src={product.images[0]} alt={`Product ${product.id}`} className="productImage" />
           </div>
-          <p className='productName'>{product.name}</p>
-          <p className='productDescription'>{product.description.substring(0, 50)}...</p>
-          <div className='categoryContainer'>
-            <span className='productCategory'>{product.category}</span>
+          <p className="productName">{product.name}</p>
+          <p className="productDescription">{product.description.substring(0, 50)}...</p>
+          <div className="categoryContainer">
+            <span className="productCategory">{product.category}</span>
           </div>
-          <Link to={`/products/${product.productID}`} className='viewButton' onClick={() => handleindiprod(product.productID)}>
+          <Link
+            to={`/products/${product.productID}`}
+            className="viewButton"
+            onClick={() => handleindiprod(product.productID)}
+          >
             View Details
-          </Link> <br/>
-          <button className='addtocartbtn' onClick={() => handleAddToCart(product.productID)}>
-              Add to Cart
+          </Link>{' '}
+          <br />
+          <button className="addtocartbtn" onClick={() => handleAddToCart(product.productID)}>
+            Add to Cart
           </button>
           {showButtons && (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <button className="editButton" onClick={() => onEdit(product.productID)}>Edit</button>
-            <button className="deleteButton" onClick={() => onDelete(product.productID)}>Delete</button>
-          </div>
+              <button className="editButton" onClick={() => onEdit(product.productID)}>
+                Edit
+              </button>
+              <button className="deleteButton" onClick={() => onDelete(product.productID)}>
+                Delete
+              </button>
+            </div>
           )}
         </div>
       ))}
