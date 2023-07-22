@@ -15,13 +15,15 @@ ANALYSIS platform:- Deepsource (Static analysis platform to help you write good 
 
 -> Other minor features. <br />
 
--> Products & CRUD on products
+-> Products & CRUD on products <br/>
+
+-> Search (text) & Categories filter
 
 # Features remaining -  
 -> P2P payment integration and exchange logic (API yet to decide). <br />
 
 # Currently building -
--> Search for products. <br />
+-> Cart. <br />
 
 # Issues - 
 -> Responsiveness === false;
