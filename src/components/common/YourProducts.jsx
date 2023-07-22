@@ -49,7 +49,7 @@ export default function YourProducts() {
         Back to Home
       </button>
       <h1 style={{ textAlign: 'center' }}>Your Products</h1>
-      <ProductDisplay products={myproducts} onEdit={handleEdit} onDelete={handleDelete} showButtons={true} />
+      <ProductDisplay products={myproducts} onEdit={handleEdit} onDelete={handleDelete} showButtons />
     </div>
   );
 }
