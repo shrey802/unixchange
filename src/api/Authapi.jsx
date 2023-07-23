@@ -10,9 +10,9 @@ import { v4 as uuidv4 } from 'uuid';
 // LISTENS FOR YOUR AUTH STATES (SIGNUP, LOGOUT, LOGIN)
 onAuthStateChanged(auth, (user) => {
     if(user){
-        
+        // code
     }else{
-        
+        // code
     }
 })
 
