@@ -48,7 +48,7 @@ export const AddUsersProduct = async (name, description, price, condition, categ
 export const GetAllProducts = async () => {
   const prodRef = collection(db, 'products');
   const snapshotofDocs = await getDocs(prodRef);
-  const allDocs = snapshotofDocs.docs.map((doc) => doc.data());
+  const allDocs = snapshotofDocs.docs.map((document) => document.data());
   return allDocs;
 }
 
@@ -57,7 +57,7 @@ export const GetUserProducts = async (userID) => {
   const prodRef = collection(db, 'products');
   const q = query(prodRef, where('userID', '==', userID));
   const querySnapshot = await getDocs(q);
-  const myproducts = querySnapshot.docs.map((doc) => doc.data());
+  const myproducts = querySnapshot.docs.map((documentt) => documentt.data());
   return myproducts;
 }
 
@@ -116,8 +116,8 @@ export const GetCategories = async () => {
     const db = app.firestore();
     const snapshot = await db.collection('products').get();
     const categories = new Set();
-    snapshot.forEach((doc) => {
-      const product = doc.data();
+    snapshot.forEach((docu) => {
+      const product = docu.data();
       if (product.category) {
         categories.add(product.category);
       }
