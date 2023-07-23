@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import {db} from '../firebaseConfig';
+import {db, storage} from '../firebaseConfig';
 import { updateDoc, collection, query, where, getDocs, doc} from "firebase/firestore"; 
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
-import { storage } from '../firebaseConfig';
 
 // BELOW FUNCTION IS TO UPDATE THE DOCUMENT WITH ALL THE DATA (NAME, MOTTO, AGE, IMAGE)
 

@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { db } from '../firebaseConfig';
-import { app } from '../firebaseConfig'
+import { db, app, storage } from '../firebaseConfig';
 import { collection, addDoc, getDocs, query, where, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadString, getDownloadURL } from 'firebase/storage'
-import { storage } from '../firebaseConfig';
 import { toast } from 'react-toastify';
 // WE ARE TAKING SELECTORS CHECKBOXES TEXT NUMBERS IMAGES [ARRAY] AS INPUT AND CREATING AN OBJECT AND STORING THAT
 // OBJECT IN FIRESTORE AND WE WILL READ THAT OBJECT TO DISPLAY PRODUCT IN CARD
