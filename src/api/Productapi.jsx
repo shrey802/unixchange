@@ -7,7 +7,7 @@ import {ref, uploadString, getDownloadURL} from 'firebase/storage'
 import { storage } from '../firebaseConfig';
 // WE ARE TAKING SELECTORS CHECKBOXES TEXT NUMBERS IMAGES [ARRAY] AS INPUT AND CREATING AN OBJECT AND STORING THAT
 // OBJECT IN FIRESTORE AND WE WILL READ THAT OBJECT TO DISPLAY PRODUCT IN CARD
-export const AddUsersProduct = async (name, description, price, quantity, condition, category, tag, images) => {
+export const AddUsersProduct = async (name, description, price, condition, category, tag, images) => {
     try {
 
         const storageRef = ref(storage, 'product-images');
@@ -30,7 +30,6 @@ export const AddUsersProduct = async (name, description, price, quantity, condit
             name: name,
             description: description,
             price: price,
-            quantity: quantity,
             condition: condition,
             category: category,
             tag: tag,
@@ -111,29 +110,7 @@ export const DeleteProduct = async (productID) => {
   }
 };
 
-export const AddToCart = async (productID) => {
-// Get existing cart data from localStorage
-const existingCart = localStorage.getItem("cart");
-let cart = [];
 
-if (existingCart) {
-  cart = JSON.parse(existingCart);
-}
-
-// Check if the product is already in the cart
-const productInCart = cart.find((item) => item.productID === productID);
-
-if (productInCart) {
-  // If the product is already in the cart, update its quantity
-  productInCart.quantity += 1;
-} else {
-  // If the product is not in the cart, add it with quantity 1
-  cart.push({ productID, quantity: 1 });
-}
-
-// Save the updated cart data to localStorage
-localStorage.setItem("cart", JSON.stringify(cart));
-}
 
 export const GetCategories = async () => {
   try {

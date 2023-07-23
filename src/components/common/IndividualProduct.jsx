@@ -58,7 +58,7 @@ export default function ProductDetail() {
       <div className="indiproductDetails">
         <p>{indiproduct.description}</p>
         <p>Cost of each piece is <span>₹{indiproduct.price}</span></p>
-        <p>Quantity: {indiproduct.quantity}</p>
+        
         <p>Condition: {indiproduct.condition}</p> <br/>
         <div className="indiproductCategoryTagContainer">
           <p className="indiproductCategory">{indiproduct.category}</p>

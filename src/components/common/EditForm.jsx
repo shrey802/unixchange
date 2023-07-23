@@ -83,15 +83,7 @@ export default function EditForm() {
         onChange={handleEditedChanges}
       />
 
-      <label>Product Quantity</label>
-      <input
-        type='number'
-        className='productquantity'
-        placeholder='Enter the number of copies you want to sell'
-        name='quantity'
-        value={specificProductData?.quantity || ''}
-        onChange={handleEditedChanges}
-      />
+      
 
       <label>Product Condition</label>
       <label>

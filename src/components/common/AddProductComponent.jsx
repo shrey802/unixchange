@@ -11,7 +11,6 @@ export default function AddProductComponent() {
     name: '',
     description: '',
     price: '',
-    quantity: '',
     condition: '',
     category: '',
     tag: '',
@@ -25,7 +24,6 @@ export default function AddProductComponent() {
         productData.name,
         productData.description,
         productData.price,
-        productData.quantity,
         productData.condition,
         productData.category,
         productData.tag,
@@ -36,7 +34,6 @@ export default function AddProductComponent() {
         name: '',
         description: '',
         price: '',
-        quantity: '',
         condition: '',
         category: '',
         tag: '',
@@ -122,17 +119,6 @@ export default function AddProductComponent() {
         />
       </div>
 
-      <div className='form-row'>
-        <label htmlFor='quantity'>Product Quantity</label>
-        <input
-          type='number'
-          id='quantity'
-          name='quantity'
-          value={productData.quantity}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
 
       <div className='form-row'>
         <label>Product Condition</label>
