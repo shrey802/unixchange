@@ -16,6 +16,7 @@ onAuthStateChanged(auth, (user) => {
     }
 })
 
+// SIGN UP API
 export const SignUp = async (email, password) => {
     try {
 
@@ -38,7 +39,7 @@ export const SignUp = async (email, password) => {
     }
 }
 
-
+// GETS THE USER ID
 const getUserID = async (email) => {
     try {
         const userCollection = collection(db, 'users');
@@ -56,6 +57,7 @@ const getUserID = async (email) => {
     }
 }
 
+// LOGIN API
 export const Login = async (email, password) => {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
@@ -76,7 +78,7 @@ export const Login = async (email, password) => {
   
 
 
-
+// LOG OUT
 export const Logout = () => {
 
     try {

@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import ContactComponent from '../components/common/ContactComponent'
 export default class ContactPage extends Component {
+  // rendering contact component
   render() {
     return (
      <ContactComponent/>

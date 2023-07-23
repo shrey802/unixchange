@@ -110,7 +110,7 @@ export const DeleteProduct = async (productID) => {
 };
 
 
-
+// GET CATEGORIES FOR CATEGORICAL SEARCH
 export const GetCategories = async () => {
   try {
     const db = app.firestore();
@@ -129,7 +129,7 @@ export const GetCategories = async () => {
   }
 };
 
-
+// GETS PRODUCT TO ADD TO CART
 export const GetProductforCart = async (productID) => {
   try {
     const prodRef = collection(db, 'products');

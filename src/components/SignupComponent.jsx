@@ -10,6 +10,7 @@ import { auth } from '../firebaseConfig';
 export default function Signup() {
 const [credentials, setCredentials] = useState({});
 let navigate = useNavigate();
+// SIGNUP / REGISTER
 const register = async() => {
     try {
         let userdata = await SignUp(credentials.email, credentials.password);
@@ -30,7 +31,7 @@ useEffect(() => {
         
     })
 }, []);
-
+// REGISTER FORM
     return (
         <div className='signupdiv'>
             <h1 className='heading'>Signup</h1>

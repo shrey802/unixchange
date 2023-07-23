@@ -6,6 +6,7 @@ import {toast} from 'react-toastify';
 import {getQuery} from '../../api/Queryapi';
 export default function ContactComponent(){
     const [credentials, setCredentials] = useState({});
+    // ADDING QUERY TO Database
   const addingQuery = async() => {
     try {
         const response = await getQuery(credentials.querymail, credentials.query);
@@ -15,10 +16,11 @@ export default function ContactComponent(){
         toast.error(error);
     }
   }
+  // FORM TO ADD YOUR QUERIES 
     return (
       <div className='contactcomp'>
       <h3 className='contactheader'>
-          Put your queries here I'll reply you as soon as possible.
+          Put your queries here I&apos;ll reply you as soon as possible.
       </h3>
       <div className='contactform'>
           <label>your unixchange mail address</label>

@@ -9,6 +9,7 @@ import {auth} from '../firebaseConfig';
 export default function LoginComponent(){
     const [credentials, setCredentials] = useState({});
     const navigate = useNavigate();
+    // LOGIN WITH SOME OPERATIONS
     const login = async() => {
         try {
             let logindata = await Login(credentials.email, credentials.password);
@@ -26,6 +27,7 @@ export default function LoginComponent(){
             
         })
     }, []);
+    // LOGIN PAGE
     return(
         <div className='login-container'>
             <h1 className='loginheading'>Login with your credentials</h1>

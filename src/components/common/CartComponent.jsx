@@ -7,7 +7,7 @@ import { GetCartItems, DeleteCartItem, UpdateQuantityofProduct } from '../../api
 export default function CartPage() {
   const [cartitems, setCartItems] = useState([]);
   const buyerID = localStorage.getItem('userID');
-
+// GET THE ITEMS IN PARTICULAR USER'S CART
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
@@ -20,7 +20,7 @@ export default function CartPage() {
 
     fetchCartItems();
   }, [buyerID, cartitems]);
-
+// DELETE ITEMS FROM CART
   const removeItemsfromcart = async (productID) => {
     try {
       await DeleteCartItem(productID);
@@ -29,7 +29,7 @@ export default function CartPage() {
       console.log(error);
     }
   }
-
+// TO UPDATE THE QUANTITY OF A PARTICULAR PRODUCT
   const updateQuantity = async (productID, newQuantity) => {
     await UpdateQuantityofProduct(productID, newQuantity);
     setCartItems((prevCartitems) =>
@@ -40,15 +40,15 @@ export default function CartPage() {
       )
     );
   };
-
+// IF IT IS NULL
   if (cartitems.length === null) {
     return <div>Loading...</div>;
   }
-
+// IF EMPTY
   if (cartitems.length === 0) {
     return <div>Your cart is empty</div>;
   }
-
+// DISPLAYS ALL THE PRODUCTS IN CART
   return (
     <div>
       <h1 className="titles">Your Cart</h1>

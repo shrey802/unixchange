@@ -7,10 +7,11 @@ import { toast } from 'react-toastify';
 import { AddingtoRealtimeCart} from '../../api/Cartapi'
 import {GetProductforCart} from '../../api/Productapi'
 export default function ProductDisplay({ products, onEdit, onDelete, showButtons, searchQuery }) {
+  // INDIVIDUAL PRODUCT
   function handleindiprod(productID) {
     localStorage.setItem('productID', productID);
   }
- 
+ // ADDING TO CART
   const handleProductID_for_addingto_cart = async(productID) => {
     try {
       const theproduct = await GetProductforCart(productID);
@@ -49,6 +50,7 @@ export default function ProductDisplay({ products, onEdit, onDelete, showButtons
           <button className="addtocartbtn" onClick={() => handleProductID_for_addingto_cart(product.productID)}>
             Add to Cart
           </button>
+        {/* ONLY SHOW IF ROUTE IS DIFFERENT */}
           {showButtons && (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <button className="editButton" onClick={() => onEdit(product.productID)}>

@@ -26,6 +26,7 @@ export default function ModalComponent({toggleModal}) {
       toast(error);
     }
   }
+  // HANDLE PROFILE DATA
     return (
       <div className='modalhaiye'>
 

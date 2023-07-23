@@ -14,12 +14,12 @@ export default function YourProducts() {
   const home = () => {
     navigate('/products');
   };
-
+// EDIT YOUR PRODUCTS
   const handleEdit = (productID) => {
     localStorage.setItem('currentProductID', productID);
     navigate('/editproduct');
   };
-
+// DELETE YOUR PRODUCTS
   const handleDelete = async (productID) => {
     try {
       await DeleteProduct(productID);
@@ -29,7 +29,7 @@ export default function YourProducts() {
       toast.error('Error deleting product');
     }
   };
-
+// GET ALL PRODUCTS YOU CREATED 
   useEffect(() => {
     const fetchMyProducts = async () => {
       try {
@@ -42,7 +42,7 @@ export default function YourProducts() {
 
     fetchMyProducts();
   }, [userID]);
-
+// DISPLAY ALL PRODUCTS YOU CREATED
   return (
     <div>
       <button onClick={home} style={{ textAlign: 'center', margin: '20px' }}>

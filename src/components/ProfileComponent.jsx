@@ -4,7 +4,7 @@ import ModalComp from '../components/common/ModalComponent'
 import ProfiledataDisplay from './common/ProfiledataDisplay';
 import { DisplayDataonDiv} from '../api/Profileapi';
 export default function ProfileComponent(){
-  
+  // RELATED TO OPEN CLOSE OF PROFILE EDIT FORM
    const [isModalOpen, setModalproperty] = useState(false);
    const [userkaData, setUserkaData] = useState({});
   
@@ -33,6 +33,7 @@ export default function ProfileComponent(){
         style={{marginTop: '30px', height: '30px', width:'auto', fontSize: '23px', marginBottom: '30px'}}>
           Edit Profile
         </button>
+        {/* CONDITIONAL ACCESS */}
         {isModalOpen && <ModalComp toggleModal={toggleModal}/>}
       </div>
     )

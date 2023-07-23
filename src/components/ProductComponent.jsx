@@ -9,7 +9,9 @@ export default function ProductComponent() {
   const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+// HAS EVERYTHING RELATED TO CATEGORIES AND SEARCH
 
+// FETCH ALL PRODUCTS
   useEffect(() => {
     const fetchProductsFunc = async () => {
       try {
@@ -19,7 +21,7 @@ export default function ProductComponent() {
         console.log(error);
       }
     };
-
+// FETCH ALL CATEGORIES
     const fetchCategoriesFunc = async () => {
       try {
         const categories = await GetCategories();

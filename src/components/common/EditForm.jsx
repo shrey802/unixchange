@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function EditForm() {
   const [specificProductData, setSpecificProductData] = useState({});
   const navigate = useNavigate();
+  // FETCH ALL PRODUCT DATA 
   useEffect(() => {
     const fetchProductData = async () => {
       try {
@@ -20,7 +21,7 @@ export default function EditForm() {
 
     fetchProductData();
   }, []);
-
+// HANDLE EDITED PRODUCT CHANGES
   const handleEditedChanges = useCallback(
     (e) => {
       const { name, value, checked } = e.target;
@@ -39,7 +40,7 @@ export default function EditForm() {
     [setSpecificProductData]
   );
   
-
+// HANDLE SUBMITTED FORM CHANGES
   function handleEditedSubmit() {
     try {
       const productID = localStorage.getItem('currentProductID');
@@ -51,7 +52,7 @@ export default function EditForm() {
       toast.error(error.message);
     }
   }
-
+// EDIT FORM PREFILLED AND THEN YOU CAN MODIFY 
   return (
     <div className='addyourproductform'>
       <h2 className='prodhead'>Edit your product data here</h2>

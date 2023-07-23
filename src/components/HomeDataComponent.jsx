@@ -6,11 +6,11 @@ import backgroundImage from '../../images/ecommerce.jpg';
 
 export default function Homepage() {
   const navigate = useNavigate();
-
+// GO TO PRODUCTS PAGE WHEN BUTTON IS CLICKED
   function navigateToProducts() {
     navigate('/products');
   }
-
+// DISPLAY ALL THE BACKGROUND MAIN CONTENT FOR HOMEPAGE
   return (
     <div className='homepage-container'>
       <div className='homepage-bg' style={{ backgroundImage: `url(${backgroundImage})` }} />

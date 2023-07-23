@@ -16,6 +16,7 @@ import MyProductsPage from '../pages/MyProductsPage'
 import EditFormPage from '../pages/EditFormPage'
 import IndividualProductPage from '../pages/IndividualPage'
 import CartPage from "../components/common/CartComponent";
+// has all the routes for every page
 export const router = createBrowserRouter([
     {
         path: '/',

@@ -9,7 +9,7 @@ import './individualProduct.css';
 export default function ProductDetail() {
   const [indiproduct, setindiproduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
+// DISPLAY INDIVIDUAL PRODUCT DETAILS
   useEffect(() => {
     const productID = localStorage.getItem("productID");
     if (productID) {
@@ -42,7 +42,7 @@ export default function ProductDetail() {
   if (!Object.keys(indiproduct).length) {
     return <div>Product not found.</div>;
   }
-
+// DISPLAYS IN STYLE
   return (
     <div className="indiproductContainer">
       <h2>{indiproduct.name.toUpperCase()}</h2>

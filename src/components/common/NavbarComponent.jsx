@@ -9,29 +9,30 @@ import { Logout } from '../../api/Authapi';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavbarComponent() {
+  // BASIC NAVBAR 
   const navigate = useNavigate();
-
+// NAVIGATION TO LOGIN
   function navigation() {
     Logout();
     navigate('/login');
   }
-
+// TO CONTRIBUTE
   function contriNavigate() {
     navigate('/contribute');
   }
-
+// TO ABOUT
   function about() {
     navigate('/about');
   }
-
+// TO CONTACT
   function handleContact() {
     navigate('/contact');
   }
-
+// TO PROFILE
   function handleProfile() {
     navigate('/profile');
   }
-
+// NAVBAR OF PRODUCTS PAGE
   return (
     <div className='wholedirtynavbar'>
       <nav className='navbarhaiye'>

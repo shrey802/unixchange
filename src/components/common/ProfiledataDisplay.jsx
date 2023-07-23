@@ -4,6 +4,7 @@ import React from 'react';
 import '../common/profiledata.css';
 
 export default function ProfiledataDisplay(props) {
+  // DISPLAY ALL THE PROFILE DATA
   return (
     <div className='profileUserData'>
       <div className='profileText'>

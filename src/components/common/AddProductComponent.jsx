@@ -4,7 +4,7 @@ import '../common/addproduct.css';
 import { AddUsersProduct } from '../../api/Productapi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+// THIS IS FORM TO ADD PRODUCTS TO FIRESTORE
 export default function AddProductComponent() {
   const [productimages, setproductimages] = useState(null);
   const [productData, setProductData] = useState({
@@ -17,7 +17,7 @@ export default function AddProductComponent() {
     images: [],
   });
   const navigate = useNavigate();
-
+// ADDING PRODUCTS
   const handlingProductAPI = async () => {
     try {
       await AddUsersProduct(
@@ -47,7 +47,7 @@ export default function AddProductComponent() {
       toast.error(error);
     }
   };
-
+// STORES ALL THE IMAGES IN STORAGE
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
     const imageArray = [];
@@ -63,7 +63,7 @@ export default function AddProductComponent() {
 
     setproductimages(imageArray);
   };
-
+// FOR CHECKBOXES AND OPTIONS & TO EASE THE STRUCTURING OF PRODUCT SCHEMA
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
 
@@ -79,7 +79,7 @@ export default function AddProductComponent() {
       }));
     }
   };
-
+// PRODUCT FORM 
   return (
     <div className='add-your-product-form'>
       <h2 className='product-heading'>Add your product data here</h2>
