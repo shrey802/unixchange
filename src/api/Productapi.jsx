@@ -99,7 +99,7 @@ export const DeleteProduct = async (productID) => {
     if (!querySnapshot.empty) {
       const docSnapshot = querySnapshot.docs[0];
       await deleteDoc(docSnapshot.ref);
-      console.log('Product deleted successfully');
+      
     } else {
       throw new Error('Product not found');
     }

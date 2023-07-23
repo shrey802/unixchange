@@ -12,9 +12,9 @@ export const UserEdited = async (userID, fullname, age, motto, picture) => {
     try {
         await uploadBytes(storageRef, picture);
         const downloadURL = await getDownloadURL(storageRef);
-        console.log('File uploaded');
+        
         downloadedURL = downloadURL;
-        console.log(downloadURL);
+        
       } catch (error) {
         console.log('Upload error:', error);
     }
@@ -43,7 +43,7 @@ export const UserEdited = async (userID, fullname, age, motto, picture) => {
   };
 // pass the document ID and data and it updates it
   await updateDoc(userRef, payload);
-  console.log('User edited');
+  
   
 }
 

@@ -10,7 +10,7 @@ export default function ContactComponent(){
     try {
         const response = await getQuery(credentials.querymail, credentials.query);
         toast('Query added in database');
-        console.log('adding query');
+        
     } catch (error) {
         toast.error(error);
     }

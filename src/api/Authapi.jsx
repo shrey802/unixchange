@@ -10,9 +10,9 @@ import { v4 as uuidv4 } from 'uuid';
 // LISTENS FOR YOUR AUTH STATES (SIGNUP, LOGOUT, LOGIN)
 onAuthStateChanged(auth, (user) => {
     if(user){
-        console.log('user is logged in');
+        
     }else{
-        console.log('user is not logged in');
+        
     }
 })
 
