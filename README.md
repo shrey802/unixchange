@@ -2,11 +2,11 @@
 This repository contains a web app that is in the development stage. This is my first project & I'm thinking of building the MVP first (p0 features) and then adding more features and do improvements.
 
 # Tech stack used - 
-React js, Firebase Web (Firestore, Storage, Authentication, Hosting[at the end]), CSS, Vite. <br/>
+React js, Firebase Web (Firestore, Storage, Authentication, Realtime Database, Hosting[at the end]), CSS, Vite. <br/>
 ANALYSIS platform:- Deepsource (Static analysis platform to help you write good code) > (https://deepsource.com/)
 
 # What is unixchange?
--> A place to exchange your stuff (literally anything)!
+-> An e-commerce marketplace!
 
 # Features built- 
 -> Edit profile. <br />
@@ -17,16 +17,15 @@ ANALYSIS platform:- Deepsource (Static analysis platform to help you write good 
 
 -> Products & CRUD on products <br/>
 
--> Search (text) & Categories filter
+-> Search (text) & Categories filter <br/>
 
-# Features remaining -  
--> P2P payment integration and exchange logic (API yet to decide). <br />
+-> Cart Feature
 
 # Currently building -
--> Cart. <br />
+-> Payment Integration. <br />
 
 # Issues - 
--> Responsiveness === false;
+-> Web App is not responsive. 
 
 # You Got Ideas?
 -> Put it in the discussions of this repository.
