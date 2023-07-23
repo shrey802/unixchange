@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { GetCartItems, DeleteCartItem, UpdateQuantityofProduct } from '../../api/Productapi';
-import { toast } from "react-toastify";
+import {} from '../../api/Cartapi'
 
+import {GetCartItems, DeleteCartItem, UpdateQuantityofProduct} from '../../api/Cartapi'
 export default function CartPage() {
   const [cartitems, setCartItems] = useState([]);
   const buyerID = localStorage.getItem('userID');

@@ -4,7 +4,8 @@ import React from 'react';
 import './display.css';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import {GetProductforCart, AddingtoFirestoreCart} from '../../api/Productapi'
+import { AddingtoRealtimeCart} from '../../api/Cartapi'
+import {GetProductforCart} from '../../api/Productapi'
 export default function ProductDisplay({ products, onEdit, onDelete, showButtons, searchQuery }) {
   function handleindiprod(productID) {
     localStorage.setItem('productID', productID);
@@ -14,7 +15,7 @@ export default function ProductDisplay({ products, onEdit, onDelete, showButtons
     try {
       const theproduct = await GetProductforCart(productID);
       const buyerID = localStorage.getItem('userID');
-      await AddingtoFirestoreCart(theproduct, buyerID);
+      await AddingtoRealtimeCart(theproduct, buyerID);
     } catch (error) {
       toast.error('Error adding product to cart');
     }
