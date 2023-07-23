@@ -16,7 +16,7 @@ export default function LoginComponent(){
             toast('Login successful');
             navigate('/home');
         } catch (error) {
-            toast('Error: ' + error.message);
+            toast(`Error: ` + error.message);
         }
     }
     useEffect(() => {
