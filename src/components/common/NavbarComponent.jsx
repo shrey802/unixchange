@@ -32,6 +32,11 @@ export default function NavbarComponent() {
   function handleProfile() {
     navigate('/profile');
   }
+// TO FAQs
+function faq() {
+  navigate('/faqs');
+}
+
 // NAVBAR OF PRODUCTS PAGE
   return (
     <div className='wholedirtynavbar'>
@@ -51,6 +56,9 @@ export default function NavbarComponent() {
           </p>
           <p className='navbar-link' onClick={handleProfile}>
             Your Profile <GiPlagueDoctorProfile size={25} />
+          </p>
+          <p className='navbar-link' onClick={faq}>
+            Support
           </p>
         </div>
         <button className='logoutofnavbar' onClick={navigation}>
