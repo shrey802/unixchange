@@ -30,7 +30,7 @@
     height: auto;
     border-radius: 6px;
     border: 1px solid blanchedalmond;
-    color: aliceblue;
+    color: blue;
     font-size: 17px;
     padding: 5px;
 }
@@ -55,7 +55,7 @@
 }
 
 .redirectingto{
-    color: bisque;
+    color: red;
     font-size: 20px;
     padding: 10px;
     border-radius: 10px;

@@ -7,11 +7,11 @@
   .navbarhaiye {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #94ADD7;
     width: 90%;
     height: 60px;
     margin: 25px auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

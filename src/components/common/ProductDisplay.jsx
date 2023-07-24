@@ -47,9 +47,12 @@ export default function ProductDisplay({ products, onEdit, onDelete, showButtons
             View Details
           </Link>{' '}
           <br />
-          <button className="addtocartbtn" onClick={() => handleProductID_for_addingto_cart(product.productID)}>
-            Add to Cart
-          </button>
+
+          {location.pathname !== '/myproducts' && (
+            <button className="addtocartbtn" onClick={() => handleProductID_for_addingto_cart(product.productID)}>
+              Add to Cart
+            </button>
+          )}
         {/* ONLY SHOW IF ROUTE IS DIFFERENT */}
           {showButtons && (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

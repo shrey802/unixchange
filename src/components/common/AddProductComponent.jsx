@@ -13,7 +13,7 @@ export default function AddProductComponent() {
     price: '',
     condition: '',
     category: '',
-    tag: '',
+    tag: 'unsold',
     images: [],
   });
   const navigate = useNavigate();
@@ -168,16 +168,6 @@ export default function AddProductComponent() {
       <div className='form-row'>
         <label>Sold?</label>
         <div className='checkbox-group'>
-          <label>
-            <input
-              type='checkbox'
-              name='tag'
-              value='sold'
-              checked={productData.tag === 'sold'}
-              onChange={handleInputChange}
-            />
-            Sold
-          </label>
           <label>
             <input
               type='checkbox'
