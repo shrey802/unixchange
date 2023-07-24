@@ -23,9 +23,7 @@ ANALYSIS platform:- Deepsource (Static analysis platform to help you write good 
 
 # Currently building -
 -> Payment Integration. <br />
-
-# Issues - 
--> Web App is not responsive. 
+-> Mobile Friendliness <br/>
 
 # You Got Ideas?
 -> Put it in the discussions of this repository.
