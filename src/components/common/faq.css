@@ -1,0 +1,57 @@
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .faq-answer {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: gray;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* For devices with screen width less than or equal to 600px (e.g., smartphones) */
+  @media screen and (max-width: 1000px) {
+    .faq-container {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .faq-question {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  
+    .faq-answer {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+  }
+  
+  /* For devices with screen width less than or equal to 400px (e.g., small smartphones) */
+  @media screen and (max-width: 400px) {
+    .faq-container {
+      font-size: 14px;
+      padding: 5px;
+    }
+  
+    .faq-question {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+  
+    .faq-answer {
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+  }
+  

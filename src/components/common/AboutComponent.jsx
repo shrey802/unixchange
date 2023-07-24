@@ -1,19 +1,18 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-// THIS IS ABOUT COMPONENT RENDERING
+import './about.css'
 export default function AboutComponent() {
   return (
-    <div className='about-section' style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h2 style={{ fontSize: '32px', color: '#333', marginBottom: '20px' }}>About Me</h2>
-      <p className='about-text' style={{ fontSize: '20px', color: '#555', marginBottom: '20px' }}>
+    <div className='about-section'>
+      <h2 className='about-heading'>About Me</h2>
+      <p className='about-text'>
         Hey there! I&apos;m Shreyash, a passionate developer and tech enthusiast. I love exploring new technologies and building awesome projects. Connect with me on social media to stay updated with my latest works and to get in touch!
       </p>
-      <div className='social-links' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <a href='https://twitter.com/ShreyashPingle' target='_blank' rel='noopener noreferrer' style={{ display: 'inline-block', margin: '0 10px', color: '#008080', fontSize: '24px', textDecoration: 'none' }}>
+      <div className='social-links'>
+        <a href='https://twitter.com/ShreyashPingle' target='_blank' rel='noopener noreferrer' className='social-link'>
           Twitter
         </a>
-        <a href='mailto:shreypingle23@gmail.com' target='_blank' rel='noopener noreferrer' style={{ display: 'inline-block', margin: '0 10px', color: '#008080', fontSize: '24px', textDecoration: 'none' }}>
+        <a href='mailto:shreypingle23@gmail.com' target='_blank' rel='noopener noreferrer' className='social-link'>
           Email
         </a>
       </div>

@@ -1,4 +1,5 @@
-.loginform{
+/* Original CSS for login form */
+.loginform {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -6,16 +7,16 @@
     align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
-}
-
-.loginheading{
+  }
+  
+  .loginheading {
     text-align: center;
     font-size: 35px;
     color: blueviolet;
-    font-family:'Times New Roman', Times, serif;
-}
-
-.loginemail{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .loginemail {
     width: 350px;
     height: auto;
     border-radius: 6px;
@@ -23,9 +24,9 @@
     color: aliceblue;
     font-size: 17px;
     padding: 5px;
-}
-
-.loginpassword{
+  }
+  
+  .loginpassword {
     width: 350px;
     height: auto;
     border-radius: 6px;
@@ -33,18 +34,18 @@
     color: blue;
     font-size: 17px;
     padding: 5px;
-}
-
-.loginbutton{
+  }
+  
+  .loginbutton {
     width: 100px;
     height: auto;
     font-size: 15px;
     border-radius: 6px;
     border: 1px solid blanchedalmond;
     padding: 7px;
-}
-
-.redirectingtosignup{
+  }
+  
+  .redirectingtosignup {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,14 +53,54 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
     gap: 15px;
-}
-
-.redirectingto{
+  }
+  
+  .redirectingto {
     color: red;
     font-size: 20px;
     padding: 10px;
     border-radius: 10px;
-}
-.redirectingto:hover{
+  }
+  
+  .redirectingto:hover {
     transform: scale(1.2);
-}
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* For devices with screen width less than or equal to 600px (e.g., smartphones) */
+  @media screen and (max-width: 1000px) {
+    .loginform {
+      width: 80%;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  
+    .loginemail,
+    .loginpassword {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .loginbutton {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .loginheading{
+        font-size: 23px;
+    }
+  }
+  
+  /* For devices with screen width less than or equal to 400px (e.g., small smartphones) */
+  @media screen and (max-width: 400px) {
+    .loginheading {
+      font-size: 28px;
+    }
+  
+    .redirectingto {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+  

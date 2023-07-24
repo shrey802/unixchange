@@ -1,60 +1,109 @@
+/* Default styles for contact component */
 .contactcomp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-  }
-  
-  .contactheader {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.contactheader {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contactform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contactform label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contactform input,
+.contactform textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.contactform textarea {
+  height: 150px;
+}
+
+.contactform button {
+  background-color: #008080;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contactform button:hover {
+  background-color: #006666;
+}
+
+/* Media queries for responsiveness */
+
+/* For devices with screen width less than or equal to 600px (e.g., smartphones) */
+@media screen and (max-width: 1000px) {
   .contactform {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: auto;
   }
-  
-  .contactform label {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #555;
+
+  .contactheader{
+    font-size: 19px;
+    margin: 0 10px 10px 10px;
   }
-  
+
   .contactform input,
   .contactform textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 16px;
   }
-  
-  .contactform textarea {
-    height: 150px;
-  }
-  
+
   .contactform button {
-    background-color: #008080;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 16px;
   }
-  
-  .contactform button:hover {
-    background-color: #006666;
+}
+
+/* For devices with screen width less than or equal to 400px (e.g., small smartphones) */
+@media screen and (max-width: 400px) {
+  .contactheader {
+    font-size: 20px;
   }
-  
+
+  .contactform {
+    width: 90%;
+  }
+
+  .contactform input,
+  .contactform textarea {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .contactform textarea {
+    height: 120px;
+  }
+
+  .contactform button {
+    padding: 6px 12px;
+  }
+}

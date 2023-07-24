@@ -40,3 +40,33 @@
     text-align: center;
     font-family: 'Bagel Fat One', cursive;
 }
+
+@media screen and (max-width: 1000px) {
+    .signupform {
+      width: 80%;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  
+    .signupemail,
+    .signuppassword {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .signupsubmit {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .heading {
+      font-size: 28px;
+    }
+  }
+  
+  /* For devices with screen width less than or equal to 400px (e.g., smartphones) */
+  @media screen and (max-width: 400px) {
+    .heading {
+      font-size: 28px;
+    }
+  }
