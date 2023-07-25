@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { FaUniversity } from 'react-icons/fa';
-import { AiFillPhone, AiFillCodeSandboxSquare } from 'react-icons/ai';
-import { SiAboutdotme } from 'react-icons/si';
-import { GiPlagueDoctorProfile } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import { Logout } from '../../api/Authapi';
@@ -52,9 +48,9 @@ export default function NavbarComponent() {
 
   return (
     <div className='wholedirtynavbar'>
-      <nav className='navbar navbar-expand-md navbar-light bg-light navbarhaiye'>
+      <nav className='navbar navbar-expand-md navbar-dark bg-dark navbarhaiye'>
         <Link to='/' className='navbar-brand headingofnavbar'>
-          UnixChange <FaUniversity size={25} />
+          UnixChange 
         </Link>
         <button
           className='navbar-toggler'
@@ -71,22 +67,22 @@ export default function NavbarComponent() {
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Link to='/contact' className='nav-link' onClick={handleContact}>
-                <AiFillPhone size={25} /> Contact
+               Contact
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/about' className='nav-link' onClick={about}>
-                <SiAboutdotme size={25} /> About
+               About
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/contribute' className='nav-link' onClick={contriNavigate}>
-                Wanna Contribute? <AiFillCodeSandboxSquare size={25} />
+                Contribute
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/profile' className='nav-link' onClick={handleProfile}>
-                Your Profile <GiPlagueDoctorProfile size={25} />
+                Your Profile 
               </Link>
             </li>
             <li className='nav-item'>

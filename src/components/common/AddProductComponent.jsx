@@ -1,9 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import '../common/addproduct.css';
 import { AddUsersProduct } from '../../api/Productapi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 // THIS IS FORM TO ADD PRODUCTS TO FIRESTORE
 export default function AddProductComponent() {
   const [productimages, setproductimages] = useState(null);
@@ -81,116 +83,134 @@ export default function AddProductComponent() {
   };
 // PRODUCT FORM 
   return (
-    <div className='add-your-product-form'>
-      <h2 className='product-heading'>Add your product data here</h2>
+    <Container className='add-your-product-form'>
+      <h2 className='product-heading'>Add your product data here </h2>
 
-      <div className='form-row'>
-        <label htmlFor='name'>Product Name</label>
-        <input
-          type='text'
-          id='name'
-          name='name'
-          value={productData.name}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      <div className='form-row'>
-        <label htmlFor='description'>Product Description (up to 20-25 words)</label>
-        <textarea
-          id='description'
-          name='description'
-          value={productData.description}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      <div className='form-row'>
-        <label htmlFor='price'>Product Price (in ₹)</label>
-        <input
-          type='number'
-          id='price'
-          name='price'
-          value={productData.price}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-
-      <div className='form-row'>
-        <label>Product Condition</label>
-        <div className='checkbox-group'>
-          <label>
-            <input
-              type='checkbox'
-              name='condition'
-              value='new'
-              checked={productData.condition === 'new'}
+      <Form>
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Product Name</Form.Label>
+            <Form.Control
+              type='text'
+              name='name'
+              value={productData.name}
               onChange={handleInputChange}
+              required
             />
-            New
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='condition'
-              value='used'
-              checked={productData.condition === 'used'}
+          </Form.Group>
+        </Row>
+
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Product Description (up to 20-25 words)</Form.Label>
+            <Form.Control
+              as='textarea'
+              name='description'
+              value={productData.description}
               onChange={handleInputChange}
+              required
             />
-            Used
-          </label>
-        </div>
-      </div>
+          </Form.Group>
+        </Row>
 
-      <div className='form-row'>
-        <label htmlFor='category'>Category</label>
-        <select
-          id='category'
-          name='category'
-          value={productData.category}
-          onChange={handleInputChange}
-          required
-        >
-          <option value=''>Select a category</option>
-          <option value='electronics'>Electronics</option>
-          <option value='clothing'>Clothing</option>
-          <option value='home'>Home &amp; Kitchen</option>
-          <option value='finance'>Finance</option>
-          <option value='education'>Education</option>
-          <option value='fitness'>Fitness</option>
-        </select>
-      </div>
-
-      <div className='form-row'>
-        <label>Sold?</label>
-        <div className='checkbox-group'>
-          <label>
-            <input
-              type='checkbox'
-              name='tag'
-              value='unsold'
-              checked={productData.tag === 'unsold'}
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Product Price (in ₹)</Form.Label>
+            <Form.Control
+              type='number'
+              name='price'
+              value={productData.price}
               onChange={handleInputChange}
+              required
             />
-            Unsold
-          </label>
-        </div>
-      </div>
+          </Form.Group>
+        </Row>
 
-      <div className='form-row'>
-        <label htmlFor='images'>Product Images</label>
-        <input type='file' id='images' name='pictures' multiple onChange={handleImageChange} required />
-      </div>
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Product Condition</Form.Label>
+            <div className='checkbox-group'>
+              <Form.Check
+                type='checkbox'
+                name='condition'
+                value='new'
+                label='New'
+                checked={productData.condition === 'new'}
+                onChange={handleInputChange}
+              />
+              <Form.Check
+                type='checkbox'
+                name='condition'
+                value='used'
+                label='Used'
+                checked={productData.condition === 'used'}
+                onChange={handleInputChange}
+              />
+            </div>
+          </Form.Group>
+        </Row>
 
-      <div className='form-row'>
-        <button type='submit' className='submit-button' onClick={handlingProductAPI}>
-          Add Product
-        </button>
-      </div>
-    </div>
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Category</Form.Label>
+            <Form.Control
+              as='select'
+              name='category'
+              value={productData.category}
+              onChange={handleInputChange}
+              required
+            >
+              <option value=''>Select a category</option>
+              <option value='electronics'>Electronics</option>
+              <option value='clothing'>Clothing</option>
+              <option value='home'>Home &amp; Kitchen</option>
+              <option value='finance'>Finance</option>
+              <option value='education'>Education</option>
+              <option value='fitness'>Fitness</option>
+            </Form.Control>
+          </Form.Group>
+        </Row>
+
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Sold?</Form.Label>
+            <div className='checkbox-group'>
+              <Form.Check
+                type='checkbox'
+                name='tag'
+                value='unsold'
+                label='Unsold'
+                checked={productData.tag === 'unsold'}
+                onChange={handleInputChange}
+              />
+            </div>
+          </Form.Group>
+        </Row>
+
+        <Row className='form-row'>
+          <Form.Group as={Col}>
+            <Form.Label>Product Images</Form.Label>
+            <Form.Control
+              type='file'
+              name='pictures'
+              multiple
+              onChange={handleImageChange}
+              required
+            />
+          </Form.Group>
+        </Row>
+
+        <Row className='form-row'>
+          <Button
+            variant='primary'
+            type='submit'
+            className='submit-button'
+            onClick={handlingProductAPI}
+          >
+            Add Product
+          </Button>
+        </Row>
+      </Form>
+    </Container>
   );
 }

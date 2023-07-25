@@ -58,7 +58,7 @@ export default function LoginComponent(){
                 />
 
                 <div className='redirectingtosignup'>
-                    new here or want to explore shit then uk 👇
+                    new here or want to explore then SignUp
                     <button onClick={() => navigate('/')} className='redirectingto'>SignUp</button>
                 </div>
 

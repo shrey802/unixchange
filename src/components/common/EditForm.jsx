@@ -4,9 +4,11 @@ import '../common/edit.css';
 import { GetProductByProductId, UpdateProductByProductId } from '../../api/Productapi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+
 export default function EditForm() {
   const [specificProductData, setSpecificProductData] = useState({});
   const navigate = useNavigate();
+
   // FETCH ALL PRODUCT DATA 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -21,7 +23,8 @@ export default function EditForm() {
 
     fetchProductData();
   }, []);
-// HANDLE EDITED PRODUCT CHANGES
+
+  // HANDLE EDITED PRODUCT CHANGES
   const handleEditedChanges = useCallback(
     (e) => {
       const { name, value, checked } = e.target;
@@ -39,8 +42,8 @@ export default function EditForm() {
     },
     [setSpecificProductData]
   );
-  
-// HANDLE SUBMITTED FORM CHANGES
+
+  // HANDLE SUBMITTED FORM CHANGES
   function handleEditedSubmit() {
     try {
       const productID = localStorage.getItem('currentProductID');
@@ -52,100 +55,114 @@ export default function EditForm() {
       toast.error(error.message);
     }
   }
-// EDIT FORM PREFILLED AND THEN YOU CAN MODIFY 
+
+  // EDIT FORM PREFILLED AND THEN YOU CAN MODIFY 
   return (
-    <div className='addyourproductform'>
-      <h2 className='prodhead'>Edit your product data here</h2>
-      <label>Product Name</label>
-      <input
-        type='text'
-        className='nameofproduct'
-        placeholder='Enter your product name'
-        name='name'
-        value={specificProductData?.name || ''}
-        onChange={handleEditedChanges}
-      />
+    <div className='container mt-5'>
+      <div className='row justify-content-center'>
+        <div className='col-lg-6 col-md-8'>
+          <div className='addyourproductform p-4'>
+            <h2 className='prodhead'>Edit your product data here</h2>
+            <div className='form-group'>
+              <label>Product Name</label>
+              <input
+                type='text'
+                className='form-control'
+                placeholder='Enter your product name'
+                name='name'
+                value={specificProductData?.name || ''}
+                onChange={handleEditedChanges}
+              />
+            </div>
 
-      <label>Product Description (up to 20-25 words)</label>
-      <textarea
-        placeholder='Enter your product description'
-        name='description'
-        value={specificProductData?.description || ''}
-        onChange={handleEditedChanges}
-      />
+            <div className='form-group'>
+              <label>Product Description (up to 20-25 words)</label>
+              <textarea
+                className='form-control'
+                placeholder='Enter your product description'
+                name='description'
+                value={specificProductData?.description || ''}
+                onChange={handleEditedChanges}
+              />
+            </div>
 
-      <label>Product Price (in ₹)</label>
-      <input
-        type='number'
-        className='productprice'
-        placeholder='Enter your product price'
-        name='price'
-        value={specificProductData?.price || ''}
-        onChange={handleEditedChanges}
-      />
+            <div className='form-group'>
+              <label>Product Price (in ₹)</label>
+              <input
+                type='number'
+                className='form-control'
+                placeholder='Enter your product price'
+                name='price'
+                value={specificProductData?.price || ''}
+                onChange={handleEditedChanges}
+              />
+            </div>
 
-      
+            <div className='form-group'>
+              <label>Product Condition</label>
+              <div className='checkbox-group'>
+                <label>
+                  <input
+                    type='checkbox'
+                    className='productcondition'
+                    name='condition'
+                    value='new'
+                    checked={specificProductData?.condition === 'new'}
+                    onChange={handleEditedChanges}
+                  />
+                  New
+                </label>
+                <label>
+                  <input
+                    type='checkbox'
+                    className='productcondition'
+                    name='condition'
+                    value='used'
+                    checked={specificProductData?.condition === 'used'}
+                    onChange={handleEditedChanges}
+                  />
+                  Used
+                </label>
+              </div>
+            </div>
 
-      <label>Product Condition</label>
-      <label>
-        <input
-          type='checkbox'
-          className='productcondition'
-          name='condition'
-          value='new'
-          checked={specificProductData?.condition === 'new'}
-          onChange={handleEditedChanges}
-        />
-        new
-      </label>
-      <label>
-        <input
-          type='checkbox'
-          className='productcondition'
-          name='condition'
-          value='used'
-          checked={specificProductData?.condition === 'used'}
-          onChange={handleEditedChanges}
-        />
-        used
-      </label>
+            <div className='form-group'>
+              <label>Category</label>
+              <select
+                className='form-control'
+                name='category'
+                value={specificProductData?.category || ''}
+                onChange={handleEditedChanges}
+              >
+                <option value=''>Select a category</option>
+                <option value='electronics'>Electronics</option>
+                <option value='clothing'>Clothing</option>
+                <option value='home'>Home &amp; Kitchen</option>
+                <option value='finance'>Finance</option>
+                <option value='education'>Education</option>
+                <option value='fitness'>Fitness</option>
+              </select>
+            </div>
 
-      <label htmlFor='category'>
-        Category <br />
-        <select id='category' name='category' value={specificProductData?.category || ''} onChange={handleEditedChanges}>
-          <option value=''>Select a category</option>
-          <option value='electronics'>Electronics</option>
-          <option value='clothing'>Clothing</option>
-          <option value='home'>Home &amp; Kitchen</option>
-          <option value='finance'>Finance</option>
-          <option value='education'>Education</option>
-          <option value='fitness'>Fitness</option>
-        </select>
-      </label>
+            <div className='form-group'>
+                <label>
+                  <input
+                    type='checkbox'
+                    name='tag'
+                    value='unsold'
+                    checked={specificProductData?.tag === 'unsold'}
+                    onChange={handleEditedChanges}
+                  />
+                  Unsold
+                </label>
+              </div>
 
-      <label>Sold?</label>
-      <label>
-        <input
-          type='checkbox'
-          name='tag'
-          value='sold'
-          checked={specificProductData?.tag === 'sold'}
-          onChange={handleEditedChanges}
-        />
-        Sold
-      </label>
-      <label>
-        <input
-          type='checkbox'
-          name='tag'
-          value='unsold'
-          checked={specificProductData?.tag === 'unsold'}
-          onChange={handleEditedChanges}
-        />
-        Unsold
-      </label>
-
-      <input type='submit' name='edit' value='Edit' onClick={handleEditedSubmit}/>
+            <button type='submit' className='btn btn-primary' name='edit' onClick={handleEditedSubmit}>
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

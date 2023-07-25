@@ -1,8 +1,4 @@
 .add-your-product-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
   padding: 30px;
   border-radius: 10px;
   background-color: #fff;
@@ -15,13 +11,12 @@
   font-size: 24px;
   color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  margin-bottom: 20px;
 }
 
 label {
@@ -69,4 +64,73 @@ select {
 
 .submit-button:hover {
   background-color: #ff4646;
+}
+
+/* Responsive Styling */
+
+@media (max-width: 600px) {
+  .add-your-product-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .product-heading {
+    font-size: 20px;
+  }
+  input[type='text'],
+  input[type='number'],
+  textarea,
+  select {
+    height: 35px;
+    font-size: 13px;
+  }
+  .submit-button {
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .add-your-product-form {
+    max-width: 90%;
+  }
+  .product-heading {
+    font-size: 20px;
+  }
+  input[type='text'],
+  input[type='number'],
+  textarea,
+  select {
+    height: 35px;
+    font-size: 13px;
+  }
+  .submit-button {
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .add-your-product-form {
+    max-width: 80%;
+  }
+  .product-heading {
+    font-size: 20px;
+  }
+  input[type='text'],
+  input[type='number'],
+  textarea,
+  select {
+    height: 35px;
+    font-size: 13px;
+  }
+  .submit-button {
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .add-your-product-form {
+    max-width: 70%;
+  }
 }
