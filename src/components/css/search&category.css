@@ -4,9 +4,8 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-top: 8px;
-  width: 500px !important;
-  margin-left: 20px;
+  width: auto;
+ 
 }
 
 .categoryBar {
@@ -18,3 +17,41 @@
   border-radius: 4px;
   width: 170px;
 }
+
+
+@media (min-width: 576px) {
+  /* Small devices (576px and up) */
+  .searchBar .categoryBar {
+    overflow-x: hidden;
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Medium devices (768px and up) */
+  .searchBar .categoryBar {
+    overflow-x: hidden;
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Large devices (992px and up) */
+  .searchBar .categoryBar {
+    overflow-x: hidden;
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Extra-large devices (1200px and up) */
+  .searchBar .categoryBar {
+    overflow-x: hidden;
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+  

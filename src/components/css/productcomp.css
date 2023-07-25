@@ -40,4 +40,36 @@
   }
   
 
+  /* Apply different widths at different screen sizes */
+@media (min-width: 576px) {
+  /* Small devices (576px and up) */
+  .product-dashboard {
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Medium devices (768px and up) */
+  .product-dashboard {
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Large devices (992px and up) */
+  .product-dashboard {
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Extra-large devices (1200px and up) */
+  .product-dashboard {
+    width: auto; /* Adjust the width as per your preference */
+    margin: 0 auto; /* Center the navbar */
+  }
+}
   

@@ -1,4 +1,5 @@
 /* individualProduct.css */
+
 .indiproductContainer {
   max-width: 600px;
   margin: 0 auto;
@@ -9,35 +10,47 @@
   background-color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #CEE6F3;
+  background-color: #cee6f3;
 }
+
+/* Add media query for small devices */
+@media (max-width: 576px) {
+  .indiproductContainer {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+}
+
 .indiproductCategoryTagContainer {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin: 10px 0 10px 15px;
 }
 
 .indiproductCategoryTagContainer p {
-  background-color: #F8D7DA;
-  border: 1px solid #D71313;
+  background-color: #f8d7da;
+  border: 1px solid #d71313;
   padding: 5px;
   margin-right: 10px;
   border-radius: 4px;
 }
-.indiproductContainer > h2{
+
+.indiproductContainer > h2 {
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .indiproductImagesContainer {
-  max-height: 400px; /* Set the desired height for the carousel */
-  overflow: hidden; /* Hide overflow to prevent extra space */
+  max-height: 400px;
+  overflow: hidden;
 }
 
 .indiproductImage {
-  width: 100%; /* Make images take the full width of the carousel */
-  height: 100%; /* Make images take the full height of the carousel */
-  object-fit: cover; /* Adjust image aspect ratio */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .indiproductDetails {
@@ -49,17 +62,17 @@
 }
 
 .indiproductDetails .indiprodcat {
-  background-color: #F8D7DA;
-  border: 1px solid #D71313;
+  background-color: #f8d7da;
+  border: 1px solid #d71313;
   padding: 5px;
   width: fit-content;
   border-radius: 4px;
 }
 
 .indiproductDetails .indiprodtag {
-  background-color: #F8D7DA;
+  background-color: #f8d7da;
   width: fit-content;
-  border: 1px solid #D71313;
+  border: 1px solid #d71313;
   padding: 5px;
   border-radius: 4px;
 }

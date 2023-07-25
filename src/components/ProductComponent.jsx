@@ -35,7 +35,6 @@ export default function ProductComponent() {
     fetchCategoriesFunc();
   }, []);
 
-  // Function to handle search input change
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -58,28 +57,38 @@ export default function ProductComponent() {
   return (
     <div>
       <ProductDashboard />
-      <div>
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="searchBar"
-        />
-        <select value={selectedCategory} onChange={handleCategoryChange} className="categoryBar">
-          <option value=''>Select a category</option>
-        <option value='electronics'>Electronics</option>
-          <option value='clothing'>Clothing</option>
-          <option value='home'>Home &amp; Kitchen</option>
-          <option value='finance'>Finance</option>
-          <option value='education'>Education</option>
-          <option value='fitness'>Fitness</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+      <div className="container mt-3">
+        <div className="row justify-content-center mb-3">
+          <div className="col-md-6 col-sm-12 mb-3 mr-3 ml-3 mt-3">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="form-control searchBar"
+            />
+          </div>
+          <div className="col-md-6 col-sm-12 mb-3">
+            <select
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              className="form-control categoryBar"
+            >
+              <option value="">Select a category</option>
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+              <option value="home">Home &amp; Kitchen</option>
+              <option value="finance">Finance</option>
+              <option value="education">Education</option>
+              <option value="fitness">Fitness</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
         <ProductDisplay products={filteredProducts} />
       </div>
     </div>
