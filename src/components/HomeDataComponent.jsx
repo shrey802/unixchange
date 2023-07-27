@@ -10,6 +10,9 @@ export default function Homepage() {
   function navigateToProducts() {
     navigate('/products');
   }
+  function navigatetoSeller() {
+    navigate('/seller');
+  }
 // DISPLAY ALL THE BACKGROUND MAIN CONTENT FOR HOMEPAGE
   return (
     <div className='homepage-container'>
@@ -21,6 +24,9 @@ export default function Homepage() {
         </p>
         <button className='homepage-btn' onClick={navigateToProducts}>
           Explore Products
+        </button> <br/>
+        <button className='seller-btn' onClick={navigatetoSeller}>
+          Become a Seller
         </button>
       </div>
     </div>

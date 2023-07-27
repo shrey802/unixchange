@@ -4,12 +4,28 @@ import ProductDisplay from '../components/common/ProductDisplay';
 import ProductDashboard from '../components/common/ProductDashboard';
 import { GetAllProducts, GetCategories } from '../api/Productapi';
 import './css/search&category.css'
+import {Sellerfind} from '../api/SellerAPI'
 export default function ProductComponent() {
   const [productData, setProductData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [seller, setseller] = useState(false);
 // HAS EVERYTHING RELATED TO CATEGORIES AND SEARCH
+const userID = localStorage.getItem('userID');
+
+useEffect(() => {
+  const fetchSeller = async () => {
+    try {
+      const seller = await Sellerfind(userID);
+      setseller(seller);
+    }catch(error){
+      console.log(error);
+    }
+  }
+  fetchSeller();
+}, [userID]);
+
 
 // FETCH ALL PRODUCTS
   useEffect(() => {
@@ -56,7 +72,7 @@ export default function ProductComponent() {
 
   return (
     <div>
-      <ProductDashboard />
+      <ProductDashboard isSeller={seller}/>
       <div className="container mt-3">
         <div className="row justify-content-center mb-3">
           <div className="col-md-6 col-sm-12 mb-3 mr-3 ml-3 mt-3">

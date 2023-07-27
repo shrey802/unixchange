@@ -17,6 +17,7 @@ import EditFormPage from '../pages/EditFormPage'
 import IndividualProductPage from '../pages/IndividualPage'
 import CartPage from "../components/common/CartComponent";
 import FaqPage from "../pages/FaqPage";
+import SellerPage from "../pages/SellerPage";
 // has all the routes for every page
 export const router = createBrowserRouter([
     {
@@ -74,5 +75,9 @@ export const router = createBrowserRouter([
     {
         path: '/faqs',
         element: <FaqPage/>
+    },
+    {
+        path: '/seller',
+        element: <SellerPage/>
     }
 ]);
