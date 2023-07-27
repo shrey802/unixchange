@@ -20,7 +20,9 @@ export default function AddProductComponent() {
   });
   const navigate = useNavigate();
 // ADDING PRODUCTS
-  const handlingProductAPI = async () => {
+  const handlingProductAPI = async (event) => {
+    event.preventDefault();
+    
     try {
       await AddUsersProduct(
         productData.name,
@@ -31,6 +33,7 @@ export default function AddProductComponent() {
         productData.tag,
         productimages
       );
+      
       toast.success('Your product has been added successfully.');
       setProductData({
         name: '',
@@ -46,6 +49,7 @@ export default function AddProductComponent() {
         navigate('/products');
       }, 6000);
     } catch (error) {
+      console.error('Error while adding product:', error);
       toast.error(error);
     }
   };

@@ -12,13 +12,14 @@ export const AddUsersProduct = async (name, description, price, condition, categ
     const storageRef = ref(storage, 'product-images');
 
     const imageURLs = await Promise.all(
-      images.map((image) => {
+      images.map(async (image) => {
         const imageRef = ref(storageRef, `${uuidv4()}.jpg`);
-        return uploadString(imageRef, image, 'data_url')
-          .then(() => getDownloadURL(imageRef))
-          .catch((error) => {
-            throw new Error(`Error uploading image: ${error.message}`);
-          });
+        try {
+          await uploadString(imageRef, image, 'data_url');
+          return await getDownloadURL(imageRef);
+        } catch (error) {
+          throw new Error(`Error uploading image: ${error.message}`);
+        }
       })
     );
 
@@ -37,6 +38,7 @@ export const AddUsersProduct = async (name, description, price, condition, categ
       images: imageURLs
     }
     await addDoc(productRef, product);
+    
 
   } catch (error) {
     console.log(error);
