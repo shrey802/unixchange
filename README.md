@@ -55,6 +55,3 @@ Put it in the discussions of the repository
 - [Firebase Setup](https://youtu.be/rQvOAnNvcNQ)
 - [Stripe](https://stripe.com/en-in)
 
-# Images 
-![Uploading Screenshot from 2023-07-30 00-18-31.png…]()
-![Uploading Screenshot from 2023-07-30 00-18-42.png…]()
