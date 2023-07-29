@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import './cart.css'
 import { GetCartItems, DeleteCartItem, UpdateQuantityofProduct } from '../../api/Cartapi';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 export default function CartPage() {
   const navigate = useNavigate();
   const [cartitems, setCartItems] = useState([]);
@@ -22,9 +22,9 @@ export default function CartPage() {
     fetchCartItems();
   }, [buyerID, cartitems]);
 
-function gotocheckout(){
-  navigate('/checkout')
-}
+// function gotocheckout(){
+//   navigate('/checkout/${productID}')
+// }
 
 // DELETE ITEMS FROM CART
   const removeItemsfromcart = async (productID) => {
@@ -90,7 +90,7 @@ function gotocheckout(){
             >
               Remove from Cart
             </button> <br/>
-            <button className="cart-buy-now-button" onClick={gotocheckout}>Checkout</button>
+            <Link to={`/checkout/${product.productData.productID}`}>Checkout</Link>
           </div>
         </div>
       ))}

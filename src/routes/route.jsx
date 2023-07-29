@@ -82,7 +82,7 @@ export const router = createBrowserRouter([
         element: <SellerPage/>
     },
     {
-        path: '/checkout',
+        path: '/checkout/:productID',
         element: <CheckoutPage/>
     }
 ]);

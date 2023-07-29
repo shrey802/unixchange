@@ -1,0 +1,65 @@
+/* AddressForm.css */
+
+/* Container for the address form */
+.address-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form groups */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  /* Labels for inputs */
+  .form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Input fields */
+  .form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles using media queries */
+  @media screen and (max-width: 600px) {
+    .address-form-container {
+      max-width: 90%;
+    }
+  
+    /* Adjust spacing for smaller screens */
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    .form-group input {
+      font-size: 14px;
+    }
+  }
+  
