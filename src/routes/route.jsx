@@ -18,6 +18,7 @@ import IndividualProductPage from '../pages/IndividualPage'
 import CartPage from "../components/common/CartComponent";
 import FaqPage from "../pages/FaqPage";
 import SellerPage from "../pages/SellerPage";
+import CheckoutPage from "../pages/CheckoutPage";
 // has all the routes for every page
 export const router = createBrowserRouter([
     {
@@ -79,5 +80,9 @@ export const router = createBrowserRouter([
     {
         path: '/seller',
         element: <SellerPage/>
+    },
+    {
+        path: '/checkout',
+        element: <CheckoutPage/>
     }
 ]);
