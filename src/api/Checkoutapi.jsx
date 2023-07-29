@@ -17,7 +17,8 @@ export const createOrder = async (address, buyerID, productID) => {
             orderID: orderID,
             buyerID: buyerID,
             address: address,
-            productkaData: productkaData
+            productkaData: productkaData,
+            paymentstatus: 'unpaid'
         }
         await addDoc(orderCollection, orderpayload);
         return orderID;
@@ -32,16 +33,16 @@ export const getProductFromCart = async (buyerID, productID) => {
   try {
     const cartRef = ref(database, 'cart');
     const cartSnapshot = await get(cartRef);
-    console.log('Cart Snapshot:', cartSnapshot); // Log the entire cart snapshot
+    
     let productkaData = {};
     cartSnapshot.forEach((itemincart) => {
       const cartItem = itemincart.val();
-      console.log('Cart Item:', cartItem); // Log the cart item to see its contents
+      
       if (cartItem.buyerID === buyerID && cartItem.productData.productID === productID) {
         productkaData = cartItem.productData;
       }
     });
-    console.log('Product Data:', productkaData); // Log the found product data
+   
     if (productkaData) {
       return productkaData;
     } else {

@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import { createOrder } from '../api/Checkoutapi';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './css/address.css'
 export default function CheckoutComponent() {
+  const navigate = useNavigate();
   const { productID } = useParams();
   const [addressFormData, setAddressFormData] = useState({
     addressLine1: '',
@@ -38,9 +40,6 @@ export default function CheckoutComponent() {
       
       // Create the order and pass buyerID, productID, and address
       const orderID = await createOrder(address, buyerID, productID);
-  
-      // Handle success or redirect to a confirmation page
-      console.log('Order created successfully:', orderID);
 
       setAddressFormData({
         addressLine1: '',
@@ -110,7 +109,7 @@ export default function CheckoutComponent() {
           required
         />
 
-        <button type='submit'>Place Order</button>
+        <button type='submit' onClick={() => navigate('/payment')}>Place Order</button>
       </form>
     </div>
   );
