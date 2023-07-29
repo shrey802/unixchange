@@ -15,15 +15,19 @@ ANALYSIS platform:- Deepsource (Static analysis platform to help you write good 
 
 -> Other minor features. <br />
 
--> Products & CRUD on products <br/>
+-> Products Pagination & CRUD on products <br/>
 
 -> Search (text) & Categories filter <br/>
 
--> Cart Feature
+-> Cart Feature <br/>
+
+-> Buyer & Seller conditional access to products <br/>
+
+-> Stripe Payment (Test Mode)
 
 # Currently building -
--> Payment Integration. <br />
--> Mobile Friendliness <br/>
+-> Invoice feature. <br/>
+-> Documentation needs to be updated.
 
 # You Got Ideas?
 -> Put it in the discussions of this repository.
@@ -31,7 +35,7 @@ ANALYSIS platform:- Deepsource (Static analysis platform to help you write good 
 # To start contributing do the following steps:-
 Set up a project in Firebase, get the Firebase Configuration, and put it in the .env file. The link 👇 will help you set up the project in Firebase <br />
 
-Make sure you install same version of packages given in package.json! <br/>
+Make sure you install the same version of packages given in package.json! <br/>
 
 > https://youtu.be/2hR-uWjBAgw <br/>
 **Timestamp for the video above ☝ 3:04 to 7:00**
