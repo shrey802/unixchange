@@ -2,17 +2,17 @@
 import React, { useState } from 'react';
 import { MaketheuserAseller } from '../api/SellerAPI';
 import CryptoJS from 'crypto-js';
-import './css/seller.css'
+import './css/seller.css';
 import { useNavigate } from 'react-router-dom';
+
 export default function SellerComponent() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     phoneNumber: '',
-    merchantId: '',
-    publicKey: '',
-    privateKey: '',
+    publishableKey: '',
+    secretKey: '',
   });
 
   const handleChange = (e) => {
@@ -26,19 +26,16 @@ export default function SellerComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Encrypt the Braintree keys before sending to the server
-    const encryptedMerchantId = CryptoJS.AES.encrypt(formData.merchantId, import.meta.env.VITE_MERCHANT_KEY).toString();
-    const encryptedPublicKey = CryptoJS.AES.encrypt(formData.publicKey, import.meta.env.VITE_MERCHANT_KEY).toString();
-    const encryptedPrivateKey = CryptoJS.AES.encrypt(formData.privateKey, import.meta.env.VITE_MERCHANT_KEY).toString();
+    // Encrypt the secret key before sending to the server
+    const encryptedSecretKey = CryptoJS.AES.encrypt(formData.secretKey, import.meta.env.VITE_SECRET_KEY).toString();
 
     // Prepare the data for the API call
     const sellerData = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       phoneNumber: formData.phoneNumber,
-      merchantId: encryptedMerchantId,
-      publicKey: encryptedPublicKey,
-      privateKey: encryptedPrivateKey,
+      publishableKey: formData.publishableKey,
+      secretKey: encryptedSecretKey,
     };
     const userID = localStorage.getItem('userID');
     try {
@@ -48,13 +45,12 @@ export default function SellerComponent() {
         firstName: '',
         lastName: '',
         phoneNumber: '',
-        merchantId: '',
-        publicKey: '',
-        privateKey: '',
+        publishableKey: '',
+        secretKey: '',
       });
       setTimeout(() => {
-        navigate('/home')
-      })
+        navigate('/home');
+      });
     } catch (error) {
       alert('Error occurred while becoming a seller.');
       console.log(error);
@@ -95,32 +91,22 @@ export default function SellerComponent() {
           required
         />
 
-        <label htmlFor="merchantId">Braintree Merchant ID:</label>
+        <label htmlFor="publishableKey">Stripe Publishable Key:</label>
         <input
           type="text"
-          id="merchantId"
-          name="merchantId"
-          value={formData.merchantId}
+          id="publishableKey"
+          name="publishableKey"
+          value={formData.publishableKey}
           onChange={handleChange}
           required
         />
 
-        <label htmlFor="publicKey">Braintree Public Key:</label>
+        <label htmlFor="secretKey">Stripe Secret Key:</label>
         <input
           type="text"
-          id="publicKey"
-          name="publicKey"
-          value={formData.publicKey}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="privateKey">Braintree Private Key:</label>
-        <input
-          type="text"
-          id="privateKey"
-          name="privateKey"
-          value={formData.privateKey}
+          id="secretKey"
+          name="secretKey"
+          value={formData.secretKey}
           onChange={handleChange}
           required
         />

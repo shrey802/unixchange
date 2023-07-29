@@ -19,6 +19,7 @@ import CartPage from "../components/common/CartComponent";
 import FaqPage from "../pages/FaqPage";
 import SellerPage from "../pages/SellerPage";
 import CheckoutPage from "../pages/CheckoutPage";
+import PaymentPage from "../pages/PaymentPage";
 // has all the routes for every page
 export const router = createBrowserRouter([
     {
@@ -84,5 +85,9 @@ export const router = createBrowserRouter([
     {
         path: '/checkout/:productID',
         element: <CheckoutPage/>
+    },
+    {
+        path: '/payment',
+        element: <PaymentPage/>
     }
 ]);
