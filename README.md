@@ -44,4 +44,3 @@ Put it in the discussions of the repository
 
 - [Firebase Setup](https://youtu.be/rQvOAnNvcNQ)
 - [Stripe](https://stripe.com/en-in)
-
