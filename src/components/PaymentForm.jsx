@@ -23,10 +23,12 @@ const PaymentForm = () => {
     fetchOrderData();
   }, [orderID]);
 
+
   const handlePaymentSuccess = (token) => {
     // Send the payment token to your backend for processing
     alert('Payment successful:', token);
     navigate('/thankyou');
+    
   };
 
   const handlePaymentError = (error) => {
