@@ -40,7 +40,7 @@ export default function CheckoutComponent() {
       
       // Create the order and pass buyerID, productID, and address
       const orderID = await createOrder(address, buyerID, productID);
-
+      navigate(`/payment/${orderID}`);
       setAddressFormData({
         addressLine1: '',
         addressLine2: '',
@@ -109,7 +109,7 @@ export default function CheckoutComponent() {
           required
         />
 
-        <button type='submit' onClick={() => navigate('/payment')}>Place Order</button>
+        <button type='submit'>Place Order</button>
       </form>
     </div>
   );

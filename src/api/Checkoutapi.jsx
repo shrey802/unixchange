@@ -8,24 +8,23 @@ import { ref, child, get } from 'firebase/database';
 
 // CREATE ORDER IN FIRESTORE COLLECTION
 export const createOrder = async (address, buyerID, productID) => {
-    const productkaData = await getProductFromCart(buyerID, productID);
-    
-    try {
-        const orderID = uuidv4();
-        const orderCollection = collection(db, 'orders');
-        const orderpayload = {
-            orderID: orderID,
-            buyerID: buyerID,
-            address: address,
-            productkaData: productkaData,
-            paymentstatus: 'unpaid'
-        }
-        await addDoc(orderCollection, orderpayload);
-        return orderID;
-    } catch (error) {
-        toast.error('Error creating order');
-        throw new Error;
+  const productkaData = await getProductFromCart(buyerID, productID);
+
+  try {
+    const orderID = uuidv4();
+    const orderCollection = collection(db, 'orders');
+    const orderpayload = {
+      orderID: orderID,
+      buyerID: buyerID,
+      address: address,
+      productkaData: productkaData,
     }
+    await addDoc(orderCollection, orderpayload);
+    return orderID;
+  } catch (error) {
+    toast.error('Error creating order');
+    throw new Error;
+  }
 }
 
 // FIND THE PARTICULAR PRODUCT FROM CART FOR CHECKOUT AND ORDER COLLECTION PURPOSES
@@ -33,16 +32,16 @@ export const getProductFromCart = async (buyerID, productID) => {
   try {
     const cartRef = ref(database, 'cart');
     const cartSnapshot = await get(cartRef);
-    
+
     let productkaData = {};
     cartSnapshot.forEach((itemincart) => {
       const cartItem = itemincart.val();
-      
+
       if (cartItem.buyerID === buyerID && cartItem.productData.productID === productID) {
         productkaData = cartItem.productData;
       }
     });
-   
+
     if (productkaData) {
       return productkaData;
     } else {
@@ -53,3 +52,12 @@ export const getProductFromCart = async (buyerID, productID) => {
   }
 };
 
+export const getOrderData = async (orderID) => {
+  const dbRef = collection(db, 'orders');
+  const q = query(dbRef, where('orderID', '==', orderID));
+  const ordersnap = await getDocs(q);
+  if (!ordersnap.empty) {
+    const orderData = ordersnap.docs[0].data();
+    return orderData;
+  }
+}
