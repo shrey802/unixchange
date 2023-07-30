@@ -55,3 +55,5 @@ Put it in the discussions of the repository
 - [Firebase Setup](https://youtu.be/rQvOAnNvcNQ)
 - [Stripe](https://stripe.com/en-in)
 
+# Video
+https://drive.google.com/file/d/1DXl7YaLwqr7R2u7TM-qfR2__TzYCICHM/view?usp=sharing
